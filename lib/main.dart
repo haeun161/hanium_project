@@ -3,6 +3,7 @@ import 'package:flutter/services.dart'; //가로방향 설정 위하여 추가
 import 'package:history_gamification/sub/firstPage.dart';
 import 'package:history_gamification/sub/loginPage.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
