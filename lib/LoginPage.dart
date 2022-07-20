@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
             padding: EdgeInsets.symmetric(horizontal: 250.0),
           children: <Widget>[
             SizedBox(height: 100.0),
-            Text(' Username', style: TextStyle(color:Colors.white)),
+            Text(' Username', style: TextStyle(color:Colors.white, fontWeight: FontWeight.bold)),
             Container(
               height: 40.0,
               child: TextField(
@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
 
             SizedBox(height: 12.0),
-            Text(' Password', style: TextStyle(color:Colors.white)),
+            Text(' Password', style: TextStyle(color:Colors.white,fontWeight: FontWeight.bold)),
             Container(
               height: 40.0,
               child: TextField(
@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                       textStyle: const TextStyle(fontSize: 10),padding: EdgeInsets.all(0),
                     ),
                     onPressed: null,
-                    child: const Text('  아이디/비밀번호 찾기'),
+                    child: const Text('  아이디/비밀번호 찾기', style: TextStyle(fontWeight: FontWeight.bold),),
                   ),
                 ),
                 const Spacer(
@@ -95,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: (){
                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => registerPage()));
                     },
-                    child: const Text('회원가입'),
+                    child: const Text('회원가입', style: TextStyle(fontWeight: FontWeight.bold),),
                   ),
                 )
               ],

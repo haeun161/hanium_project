@@ -38,9 +38,6 @@ class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('History Gamification'),
-      ),
       body:  Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -48,15 +45,38 @@ class _FirstPageState extends State<FirstPage> {
             image: AssetImage('assets/images1/background.jpg'), // 배경 이미지
           ),
         ),
-        child: Center(
-          child: Text(
-            'History\n Gamification',
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 70, color:Colors.white),
-          ),
-        ),
+          child: ListView(
+            children: <Widget>[
+              SizedBox(height: 90.0),
+              Text(
+                'History\n Gamification',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize:70, color:Colors.white),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                  textStyle: const TextStyle(fontSize: 10),padding: EdgeInsets.all(0),
+                ),
+                onPressed: (){
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => LoginPage()));
+                },
+                child: const Text('tap to start', style: TextStyle(fontSize: 30.0,color: Colors.white),
+               )
+              )
+            ]
+        )
+          /*
+          Text(
+                'History\n Gamification',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize:70, color:Colors.white),
+          )
+          */
 
       ),
+
+
 
       floatingActionButton: FloatingActionButton(
         onPressed: (){

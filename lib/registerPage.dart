@@ -1,7 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:history_gamification/main.dart';
+import 'package:history_gamification/checkMail.dart';
+
+import 'LoginPage.dart';
+
 
 class registerPage extends StatefulWidget {
   @override
@@ -34,34 +35,58 @@ class _registerPage extends State<registerPage> {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage('assets/images1/dark.png'),
+                    image: AssetImage('assets/images1/purple.png'),
                   ),
                 ),
                 child: ListView(
                   padding: EdgeInsets.symmetric(horizontal: 50.0,vertical: 5.0),
                   children: <Widget>[
-                    Text('회원가입', style: TextStyle(color:Colors.white, fontSize: 32.0)),
+                    Text('회원가입', style: TextStyle(color:Color(0xff666699), fontSize: 32.0, fontWeight: FontWeight.bold)),
                     SizedBox(height:5.0),
 
-                    Text(' 이메일', style: TextStyle(color:Colors.white)),
+                    Text(' 이메일', style: TextStyle(color:Colors.white,fontWeight: FontWeight.bold)),
                     Container(
                       height: 40.0,
-                      child: TextField(
-                        controller: _usernameController,
-                        decoration: InputDecoration(
-                            filled: true,
-                            labelText: 'Email',
-                            fillColor: Colors.white,
+                      child: Row(
+                      children:[
+                        Container(
+                          width: 215.0,
+                          child:TextField(
+                            controller: _usernameController,
+                            decoration: InputDecoration(
+                                filled: true,
+                                labelText: 'Email',
+                                fillColor: Colors.white,
 
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(10))
-                            )
+                                enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(Radius.circular(10))
+                                )
+                            ),
+                          ),
                         ),
+
+                        Container(
+                          width: 60.0,
+                          child: ButtonBar(
+                            children: <Widget>[
+                              RaisedButton(
+                                color: Color(0xff666699),
+                                child: Text('인증'),
+                                onPressed: () {
+                                  Navigator.of(context)
+                                      .push(MaterialPageRoute(builder: (context) => checkMail()));
+                                },
+                              ),
+                            ],
+                          ),
+                        )
+
+                       ]
                       ),
                     ),
 
                     SizedBox(height: 12.0),
-                    Text(' 비밀번호', style: TextStyle(color:Colors.white)),
+                    Text(' 비밀번호', style: TextStyle(color:Colors.white,fontWeight: FontWeight.bold)),
                     Container(
                       height: 30.0,
                       child: TextField(
@@ -79,7 +104,7 @@ class _registerPage extends State<registerPage> {
                         obscureText: true,
                       ),
                     ),
-                    Text(' 비밀번호 확인', style: TextStyle(color:Colors.white)),
+                    Text(' 비밀번호 확인', style: TextStyle(color:Colors.white,fontWeight: FontWeight.bold)),
                     Container(
                       height: 30.0,
                       child: TextField(
@@ -101,9 +126,11 @@ class _registerPage extends State<registerPage> {
                     ButtonBar(
                       children: <Widget>[
                         RaisedButton(
+                          color: Color(0xff666699),
                           child: Text('확인'),
                           onPressed: () {
-                            Navigator.pop(context);
+                            Navigator.of(context)
+                                .push(MaterialPageRoute(builder: (context) => LoginPage()));
                           },
                         ),
                       ],
