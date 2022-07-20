@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
             padding: EdgeInsets.symmetric(horizontal: 250.0),
           children: <Widget>[
             SizedBox(height: 100.0),
-            Text('Username', style: TextStyle(color:Colors.white)),
+            Text(' Username', style: TextStyle(color:Colors.white)),
             Container(
               height: 40.0,
               child: TextField(
@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
 
             SizedBox(height: 12.0),
-            Text('Password', style: TextStyle(color:Colors.white)),
+            Text(' Password', style: TextStyle(color:Colors.white)),
             Container(
               height: 40.0,
               child: TextField(
@@ -69,34 +69,52 @@ class _LoginPageState extends State<LoginPage> {
                 obscureText: true,
               ),
             ),
-            TextButton(
-              style: TextButton.styleFrom(
-                textStyle: const TextStyle(fontSize: 10),
-              ),
-              onPressed: null,
-              child: const Text('아이디/비밀번호 찾기'),
-            ),
-            TextButton(
-              style: TextButton.styleFrom(
-                textStyle: const TextStyle(fontSize: 10),
-              ),
-              onPressed: (){
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => registerPage()));
-              },
-              child: const Text('회원가입'),
-            ),
-            ButtonBar(
-              children: <Widget>[
-                RaisedButton(
-                  child: Text('OK'),
-                  onPressed: (){
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) => mainPage()));
-                  },
+
+            Row(
+              children: [
+                Container(
+                  height: 20.0,
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      textStyle: const TextStyle(fontSize: 10),padding: EdgeInsets.all(0),
+                    ),
+                    onPressed: null,
+                    child: const Text('  아이디/비밀번호 찾기'),
+                  ),
                 ),
+                const Spacer(
+                flex: 2,
+                ),
+
+                Container(
+                  height: 20.0,
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      textStyle: const TextStyle(fontSize: 10),padding: EdgeInsets.all(0),
+                    ),
+                    onPressed: (){
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => registerPage()));
+                    },
+                    child: const Text('회원가입'),
+                  ),
+                )
               ],
             ),
+            Container(
+              height: 40.0,
+              alignment: Alignment.topRight,
+              child: ButtonBar(
+                children: <Widget>[
+                  RaisedButton(
+                    child: Text('OK'),
+                    onPressed: (){
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) => mainPage()));
+                    },
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),

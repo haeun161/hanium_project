@@ -63,7 +63,7 @@ class _FirstPageState extends State<FirstPage> {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => LoginPage()));
         },
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.arrow_circle_right),
       ),
 // This trailing comma makes auto-formatting nicer for build methods.
     );

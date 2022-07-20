@@ -63,9 +63,10 @@ flutter:
     #background
     - assets/images1/background.jpg
     - assets/images1/dark_background.png
+    - assets/images1/dark.png
     #login
     - assets/login/Login_back.png
-    - assets/login/id_pw_box.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
