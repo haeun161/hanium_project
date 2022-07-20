@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:history_gamification/main.dart';
 
-class LoginPage extends StatefulWidget {
+class registerPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _registerPage createState() => _registerPage();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _registerPage extends State<registerPage> {
 
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage('assets/login/Login_back.png'), // 배경 이미지
+              image: AssetImage('assets/images1/dark_background.png'), // 배경 이미지
             ),
           ),
 
@@ -29,15 +29,15 @@ class _LoginPageState extends State<LoginPage> {
             child: ListView(
               padding: EdgeInsets.symmetric(horizontal: 250.0),
               children: <Widget>[
-                SizedBox(height: 100.0),
-                Text('Username', style: TextStyle(color:Colors.white)),
+                SizedBox(height:70.0),
+                Text('이메일', style: TextStyle(color:Colors.white)),
                 Container(
                   height: 40.0,
                   child: TextField(
                     controller: _usernameController,
                     decoration: InputDecoration(
                         filled: true,
-                        labelText: 'Username',
+                        labelText: 'Email',
                         fillColor: Colors.white,
 
                         enabledBorder: OutlineInputBorder(
@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
 
                 SizedBox(height: 12.0),
-                Text('Password', style: TextStyle(color:Colors.white)),
+                Text('비밀번호', style: TextStyle(color:Colors.white)),
                 Container(
                   height: 40.0,
                   child: TextField(
@@ -67,24 +67,29 @@ class _LoginPageState extends State<LoginPage> {
                     obscureText: true,
                   ),
                 ),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    textStyle: const TextStyle(fontSize: 10),
+                Text('비밀번호 확인', style: TextStyle(color:Colors.white)),
+                Container(
+                  height: 40.0,
+                  child: TextField(
+                    controller: _passwordController,
+                    decoration: InputDecoration(
+                        filled: true,
+                        labelText: 'Password',
+                        fillColor: Colors.white,
+
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10))
+                        )
+
+                    ),
+                    obscureText: true,
                   ),
-                  onPressed: null,
-                  child: const Text('아이디/비밀번호 찾기'),
                 ),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    textStyle: const TextStyle(fontSize: 10),
-                  ),
-                  onPressed: null,
-                  child: const Text('회원가입'),
-                ),
+
                 ButtonBar(
                   children: <Widget>[
                     RaisedButton(
-                      child: Text('OK'),
+                      child: Text('확인'),
                       onPressed: () {
                         Navigator.pop(context);
                       },

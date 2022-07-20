@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:history_gamification/main.dart';
+import 'package:history_gamification/mainPage.dart';
+import 'package:history_gamification/registerPage.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -78,15 +80,19 @@ class _LoginPageState extends State<LoginPage> {
               style: TextButton.styleFrom(
                 textStyle: const TextStyle(fontSize: 10),
               ),
-              onPressed: null,
+              onPressed: (){
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => registerPage()));
+              },
               child: const Text('회원가입'),
             ),
             ButtonBar(
               children: <Widget>[
                 RaisedButton(
                   child: Text('OK'),
-                  onPressed: () {
-                    Navigator.pop(context);
+                  onPressed: (){
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) => mainPage()));
                   },
                 ),
               ],
@@ -98,57 +104,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
-/*
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context){
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('Login Page'),
-        ),
-        body:  Container(
-          //배경화면
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage('assets/login/Login_back.png'), // 배경 이미지
-              ),
-            ),
-          child: Center(
-            child: Column(
-              children: <Widget> [
-                Card(
-                  shape: RoundedRectangleBorder(
-                    // 경계는 네모모양
-                    borderRadius: BorderRadius.circular(16.0), // Radius는 16정도로.
-                  ),
-                  elevation: 4.0, // 그림자 깊이
-                  child: Container(
-                    width: 500,
-                    height: 80,
-                  ),
-                ),
-
-                Card(
-                  shape: RoundedRectangleBorder(
-                    // 경계는 네모모양
-                    borderRadius: BorderRadius.circular(16.0), // Radius는 16정도로.
-                  ),
-                  elevation: 4.0, // 그림자 깊이
-                  child: Container(
-                    width: 500,
-                    height: 80,
-                  ),
-                ),
-
-              ],
-            ),
-          ),
-        )
-    );
-  }
-}
- */
