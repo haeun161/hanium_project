@@ -29,36 +29,57 @@ class _LoginPageState extends State<LoginPage> {
         child: ListView(
             padding: EdgeInsets.symmetric(horizontal: 250.0),
           children: <Widget>[
-            SizedBox(height: 140.0),
+            SizedBox(height: 100.0),
             Text('Username', style: TextStyle(color:Colors.white)),
-            TextField(
-              controller: _usernameController,
-              decoration: InputDecoration(
-                filled: true,
-                labelText: 'Username',
-                fillColor: Colors.white,
-                
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10))
-                )
-                
+            Container(
+              height: 40.0,
+              child: TextField(
+                controller: _usernameController,
+                decoration: InputDecoration(
+                    filled: true,
+                    labelText: 'Username',
+                    fillColor: Colors.white,
+
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10))
+                    )
+
+                ),
+              ),
+              ),
+
+            SizedBox(height: 12.0),
+            Text('Password', style: TextStyle(color:Colors.white)),
+            Container(
+              height: 40.0,
+              child: TextField(
+                controller: _passwordController,
+                decoration: InputDecoration(
+                    filled: true,
+                    labelText: 'Password',
+                    fillColor: Colors.white,
+
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10))
+                    )
+
+                ),
+                obscureText: true,
               ),
             ),
-            SizedBox(height: 14.0),
-            Text('Password', style: TextStyle(color:Colors.white)),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(
-                  filled: true,
-                  labelText: 'Password',
-                  fillColor: Colors.white,
-
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10))
-                  )
-
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: const TextStyle(fontSize: 10),
               ),
-              obscureText: true,
+              onPressed: null,
+              child: const Text('아이디/비밀번호 찾기'),
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: const TextStyle(fontSize: 10),
+              ),
+              onPressed: null,
+              child: const Text('회원가입'),
             ),
             ButtonBar(
               children: <Widget>[
