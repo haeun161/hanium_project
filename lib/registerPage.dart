@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:history_gamification/checkMail.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'LoginPage.dart';
 
@@ -13,6 +14,7 @@ class _registerPage extends State<registerPage> {
 
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _passwordConfirm = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +110,7 @@ class _registerPage extends State<registerPage> {
                     Container(
                       height: 30.0,
                       child: TextField(
-                        controller: _passwordController,
+                        controller: _passwordConfirm,
                         decoration: InputDecoration(
                             filled: true,
                             labelText: 'Password',
@@ -125,12 +127,35 @@ class _registerPage extends State<registerPage> {
 
                     ButtonBar(
                       children: <Widget>[
-                        RaisedButton(
-                          color: Color(0xff666699),
+                        ElevatedButton(
+                           style:ElevatedButton.styleFrom(primary: Color(0xff666699)),
                           child: Text('확인'),
-                          onPressed: () {
-                            Navigator.of(context)
-                                .push(MaterialPageRoute(builder: (context) => LoginPage()));
+                          onPressed: () async {
+                             //회원가입 구현
+                            try{
+                              UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _usernameController.text, password: _passwordController.text).then((value){
+                                if(value.user!.email == null){
+                                }else{
+                                  Navigator.pop(context);
+                                }
+                                return value;
+                              });
+                              FirebaseAuth.instance.currentUser?.sendEmailVerification();}
+                            on FirebaseAuthException catch (e) {
+                              if(e.code == 'weak-password'){
+                                print('이 비밀번호는 너무 약합니다.');
+                              }
+                              else if (e.code == 'email-already-in-use'){
+                                print('해당 이메일에 대한 계정이 이미 존재합니다.');
+                              }
+                              else{
+                                print('확인');
+                              }
+                            } catch (e){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
+                            }
+                            //Navigator.of(context)
+                                //.push(MaterialPageRoute(builder: (context) => LoginPage()));
                           },
                         ),
                       ],
