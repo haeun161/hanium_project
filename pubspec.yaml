@@ -70,6 +70,10 @@ flutter:
     - assets/images1/purple.png
     #login
     - assets/login/Login_back.png
+    #mainPage
+    - assets/mainPage/Quiz_button.png
+    - assets/mainPage/Ranking_button.png
+    - assets/mainPage/setting_button.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

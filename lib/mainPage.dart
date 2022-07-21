@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; //가로방향 설정 위하여 추가
 import 'package:history_gamification/LoginPage.dart';
 
 class mainPage extends StatefulWidget {
@@ -22,26 +21,131 @@ class _mainPage extends State<mainPage> {
 
           child: SafeArea(
             child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 100.0,vertical: 20),
+              padding: EdgeInsets.symmetric(horizontal: 80.0,vertical: 10),
               children: <Widget>[
                 Text('HOME', style: TextStyle(color:Colors.white,fontSize: 45.0)),
-                SizedBox(height: 5.0),
+                SizedBox(height: 2.0),
+                Center(
+                  child: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Column(
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Container(
+                                  width: 230,
+                                  height: 180,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage('assets/images1/dark.png'),
+                                    ),
+                                  ),
+                                  child: Column(
+                                    children: <Widget>[
+                                      SizedBox( height: 15,),
+                                      Text(
+                                        'Profile',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(fontSize:25, color:Colors.white),
+                                      )
+                                    ]
+                                  ),
+                                ), //Container
+                                SizedBox( width: 10,),
 
-                Container(
-                  height: 250.0,
-                  child: Row(
-                    children: [
-                      Column(
-                      )
-                    ],
-                  ),
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/images1/dark.png'),
-                    ),
-                  ),
-
+                                Container(
+                                    width: 320,
+                                    height: 180,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage('assets/images1/dark.png'),
+                                    ),
+                                  ),
+                                  child: Column(
+                                      children: <Widget>[
+                                        SizedBox( height: 15,),
+                                        Text(
+                                          'Story',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(fontSize:25, color:Colors.white),
+                                        )
+                                      ]
+                                  ),//BoxDecoration
+                                ), //Container
+                              ], //<Widget>[]
+                              mainAxisAlignment: MainAxisAlignment.center,
+                            ),
+                            Container(
+                              height: 10.0,
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Container(
+                                  width: 115,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage('assets/images1/dark.png'),
+                                    ),
+                                  ),//BoxDecoration
+                                ),
+                                SizedBox(  width: 10,),
+                                Container(
+                                  width: 115,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage('assets/images1/dark.png'),
+                                    ),
+                                  ),//BoxDecoration
+                                ), ///Container
+                                SizedBox(  width: 10,), //SizedBox
+                                Container(
+                                    width: 100,
+                                    height: 100,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage('assets/images1/dark.png'),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(  width: 10,),
+                                Container(
+                                  width: 200,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage('assets/images1/dark.png'),
+                                    ),
+                                  ),
+                                  child: TextButton(
+                                      style: TextButton.styleFrom(
+                                        textStyle: const TextStyle(fontSize: 10),padding: EdgeInsets.all(0),
+                                      ),
+                                      onPressed: (){
+                                        Navigator.of(context)
+                                            .push(MaterialPageRoute(builder: (context) => LoginPage()));
+                                      },
+                                      child: const Text('Game Start', style: TextStyle(fontSize: 25.0,color: Colors.white),
+                                      )
+                                  ),//BoxedDecoration
+                                )//Container
+                              ], //<Widget>[]
+                              mainAxisAlignment: MainAxisAlignment.center,
+                            ), //Row
+                          ], //<widget>[]
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                        ), //Column
+                      ) //Padding
+                  ), //Container
                 ),
               ],
             ),
