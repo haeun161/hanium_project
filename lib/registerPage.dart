@@ -119,15 +119,11 @@ class _registerPage extends State<registerPage> {
 
                              //회원가입 구현
                             try {
-
                               UserCredential userCredential = await FirebaseAuth
                                   .instance.createUserWithEmailAndPassword(
                                   email: _usernameController.text,
                                   password: _passwordController.text);
                               User? user = FirebaseAuth.instance.currentUser;
-                              if (!user!.emailVerified) {
-                                await user.sendEmailVerification();
-                              }
                             }//FirebaseAuth.instance.currentUser?.sendEmailVerification();
 
                             on FirebaseAuthException catch (e) {
@@ -285,10 +281,13 @@ class _registerPage extends State<registerPage> {
                             } catch (e){
                               Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
                             }
+                            User? user = FirebaseAuth.instance.currentUser;
+                            if (!user!.emailVerified) {
+                              await user.sendEmailVerification();
+                            }
+
                             //Navigator.of(context)
                                 //.push(MaterialPageRoute(builder: (context) => LoginPage()));
-
-
 
                           },
                         ),
