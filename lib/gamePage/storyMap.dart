@@ -15,7 +15,7 @@ class _storyMap extends State<storyMap> {
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage('assets/images1/background.jpg'), // 배경 이미지
+              image: AssetImage('assets/images1/storymap_background.png'), // 배경 이미지
             ),
           ),
         )
