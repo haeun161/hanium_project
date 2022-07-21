@@ -66,20 +66,7 @@ class _registerPage extends State<registerPage> {
                           ),
                         ),
 
-                        Container(
-                          width: 75.0,
-                          child: ButtonBar(
-                            children: <Widget>[
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(primary: Color(0xff666699),),
-                                child: Text('인증'),
-                                onPressed: () {
-                                  FirebaseAuth.instance.currentUser?.sendEmailVerification();
-                                },
-                              ),
-                            ],
-                          ),
-                        )
+
 
                        ]
                       ),
@@ -129,8 +116,10 @@ class _registerPage extends State<registerPage> {
                            style:ElevatedButton.styleFrom(primary: Color(0xff666699)),
                           child: Text('확인'),
                           onPressed: () async {
+
                              //회원가입 구현
                             try {
+
                               UserCredential userCredential = await FirebaseAuth
                                   .instance.createUserWithEmailAndPassword(
                                   email: _usernameController.text,
@@ -144,15 +133,153 @@ class _registerPage extends State<registerPage> {
                             }
                             on FirebaseAuthException catch (e) {
                               if(e.code == 'weak-password'){
-                                print('이 비밀번호는 너무 약합니다.');
+                                showDialog(
+                                    context: context,
+                                    //barrierDismissible - Dialog를 제외한 다른 화면 터치 x
+                                    barrierDismissible: false,
+                                    builder: (BuildContext context) {
+                                      return AlertDialog(
+                                        // RoundedRectangleBorder - Dialog 화면 모서리 둥글게 조절
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(10.0)),
+                                        //Dialog Main Title
+                                        title: Column(
+                                          children: <Widget>[
+                                            new Text("비밀번호 재입력"),
+                                          ],
+                                        ),
+                                        //
+                                        content: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: <Widget>[
+                                            Text(
+                                              "비밀번호가 너무 약합니다! 재입력 해주세요",
+                                            ),
+                                          ],
+                                        ),
+                                        actions: <Widget>[
+                                          new FlatButton(
+                                            child: new Text("확인"),
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                          ),
+                                        ],
+                                      );
+                                    });
                               }
                               else if (e.code == 'email-already-in-use'){
-                                print('해당 이메일에 대한 계정이 이미 존재합니다.');
+                                showDialog(
+                                    context: context,
+                                    //barrierDismissible - Dialog를 제외한 다른 화면 터치 x
+                                    barrierDismissible: false,
+                                    builder: (BuildContext context) {
+                                      return AlertDialog(
+                                        // RoundedRectangleBorder - Dialog 화면 모서리 둥글게 조절
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(10.0)),
+                                        //Dialog Main Title
+                                        title: Column(
+                                          children: <Widget>[
+                                            new Text("이메일 중복"),
+                                          ],
+                                        ),
+                                        //
+                                        content: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: <Widget>[
+                                            Text(
+                                              "해당 이메일에 대한 계정이 이미 존재합니다.",
+                                            ),
+                                          ],
+                                        ),
+                                        actions: <Widget>[
+                                          new FlatButton(
+                                            child: new Text("확인"),
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                          ),
+                                        ],
+                                      );
+                                    });
                               }
                               else if (_passwordController.text != _passwordConfirm.text){
-                                print('비밀번호가 일치하지 않습니다.');
+                                showDialog(
+                                    context: context,
+                                    //barrierDismissible - Dialog를 제외한 다른 화면 터치 x
+                                    barrierDismissible: false,
+                                    builder: (BuildContext context) {
+                                      return AlertDialog(
+                                        // RoundedRectangleBorder - Dialog 화면 모서리 둥글게 조절
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(10.0)),
+                                        //Dialog Main Title
+                                        title: Column(
+                                          children: <Widget>[
+                                            new Text("비밀번호 재입력"),
+                                          ],
+                                        ),
+                                        //
+                                        content: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: <Widget>[
+                                            Text(
+                                              "비밀번호가 일치하지 않습니다.",
+                                            ),
+                                          ],
+                                        ),
+                                        actions: <Widget>[
+                                          new FlatButton(
+                                            child: new Text("확인"),
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                          ),
+                                        ],
+                                      );
+                                    });
                               }
                               else{
+                                FirebaseAuth.instance.currentUser?.sendEmailVerification();
+                                showDialog(
+                                    context: context,
+                                    //barrierDismissible - Dialog를 제외한 다른 화면 터치 x
+                                    barrierDismissible: false,
+                                    builder: (BuildContext context) {
+                                      return AlertDialog(
+                                        // RoundedRectangleBorder - Dialog 화면 모서리 둥글게 조절
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(10.0)),
+                                        //Dialog Main Title
+                                        title: Column(
+                                          children: <Widget>[
+                                            new Text("이메일 미인증"),
+                                          ],
+                                        ),
+                                        //
+                                        content: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: <Widget>[
+                                            Text(
+                                              "발송된 인증메일로 회원가입을 완료해주세요!",
+                                            ),
+                                          ],
+                                        ),
+                                        actions: <Widget>[
+                                          new FlatButton(
+                                            child: new Text("확인"),
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                          ),
+                                        ],
+                                      );
+                                    });
                                 print('확인');
                               }
                             } catch (e){
@@ -160,6 +287,9 @@ class _registerPage extends State<registerPage> {
                             }
                             //Navigator.of(context)
                                 //.push(MaterialPageRoute(builder: (context) => LoginPage()));
+
+
+
                           },
                         ),
                       ],
