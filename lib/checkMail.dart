@@ -151,8 +151,8 @@ class _checkMail extends State<checkMail> {
 
                     ButtonBar(
                       children: <Widget>[
-                        RaisedButton(
-                          color: Color(0xff666699),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(primary: Color(0xff666699),),
                           child: Text('확인'),
                           onPressed: () {
                             Navigator.of(context)

@@ -41,23 +41,24 @@ class _registerPage extends State<registerPage> {
                   ),
                 ),
                 child: ListView(
-                  padding: EdgeInsets.symmetric(horizontal: 50.0,vertical: 5.0),
+                  padding: EdgeInsets.symmetric(horizontal: 40.0,vertical: 5.0),
                   children: <Widget>[
                     Text('회원가입', style: TextStyle(color:Color(0xff666699), fontSize: 32.0, fontWeight: FontWeight.bold)),
                     SizedBox(height:5.0),
 
                     Text(' 이메일', style: TextStyle(color:Colors.white,fontWeight: FontWeight.bold)),
                     Container(
-                      height: 40.0,
+                      height: 45.0,
                       child: Row(
                       children:[
                         Container(
-                          width: 215.0,
+                          width: 220.0,
+                          height: 35.0,
                           child:TextField(
                             controller: _usernameController,
                             decoration: InputDecoration(
                                 filled: true,
-                                labelText: 'Email',
+                                labelText: '이메일을 입력하세요.',
                                 fillColor: Colors.white,
 
                                 enabledBorder: OutlineInputBorder(
@@ -68,11 +69,11 @@ class _registerPage extends State<registerPage> {
                         ),
 
                         Container(
-                          width: 60.0,
+                          width: 75.0,
                           child: ButtonBar(
                             children: <Widget>[
-                              RaisedButton(
-                                color: Color(0xff666699),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(primary: Color(0xff666699),),
                                 child: Text('인증'),
                                 onPressed: () {
                                   Navigator.of(context)
@@ -95,7 +96,7 @@ class _registerPage extends State<registerPage> {
                         controller: _passwordController,
                         decoration: InputDecoration(
                             filled: true,
-                            labelText: 'Password',
+                            labelText: '비밀번호를 입력하세요.',
                             fillColor: Colors.white,
 
                             enabledBorder: OutlineInputBorder(
@@ -113,7 +114,7 @@ class _registerPage extends State<registerPage> {
                         controller: _passwordConfirm,
                         decoration: InputDecoration(
                             filled: true,
-                            labelText: 'Password',
+                            labelText: '비밀번호를 입력하세요.',
                             fillColor: Colors.white,
 
                             enabledBorder: OutlineInputBorder(
