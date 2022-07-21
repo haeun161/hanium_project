@@ -112,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
     UserCredential userCredential = await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: _usernameController.text, password: _passwordController.text).then((value){
     print(value);
-    value.user!.emailVerified == true ? Navigator.push(context,MaterialPageRoute(builder: (_) => mainPage())): showDialog(
+    value.user!.emailVerified == true ? Navigator.push(context,MaterialPageRoute(builder: (_) => mainPage())):  showDialog(
         context: context,
         //barrierDismissible - Dialog를 제외한 다른 화면 터치 x
         barrierDismissible: false,
@@ -124,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
             //Dialog Main Title
             title: Column(
               children: <Widget>[
-                new Text("인증되지 않은 이메일입니다."),
+                new Text("이메일 미인증"),
               ],
             ),
             //
@@ -133,7 +133,7 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "회원가입에서 인증을 진행해주세요.",
+                  "발송된 인증메일로 회원가입을 완료해주세요!",
                 ),
               ],
             ),
@@ -146,7 +146,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ],
           );
-        });;
+        });
     return value;//이메일 인증 여부 확인
     });
     } on FirebaseAuthException catch (e) {
@@ -163,7 +163,7 @@ class _LoginPageState extends State<LoginPage> {
                                   //Dialog Main Title
                                   title: Column(
                                     children: <Widget>[
-                                      new Text("등록되지 않은 이메일입니다."),
+                                      new Text("등록되지 않은 이메일"),
                                     ],
                                   ),
                                   //
@@ -288,7 +288,7 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                   actions: <Widget>[
                                     new FlatButton(
-                                      child: new Text("다시 시도해주세요!ㅔ"),
+                                      child: new Text("다시 시도해주세요!"),
                                       onPressed: () {
                                         Navigator.pop(context);
                                       },
