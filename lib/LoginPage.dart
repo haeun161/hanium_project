@@ -109,9 +109,14 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () async{
                       //로그인 기능 구현 후
                       try{
-    UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: _usernameController.text, password: _passwordController.text).then((value){
+                        print("dkskds");
+    UserCredential userCredential = await FirebaseAuth.instance
+        .signInWithEmailAndPassword(email: _usernameController.text, password: _passwordController.text).then((value){
     print(value);
-    value.user!.emailVerified == true ? Navigator.push(context,MaterialPageRoute(builder: (_) => mainPage())):print("이메일 확인되지 않음");
+    value.user!.emailVerified == true
+        ? Navigator.push(context,
+          MaterialPageRoute(builder: (_) => mainPage()))
+        : print("이메일 확인되지 않음");
     return value;//이메일 인증 여부 확인
     });
     } on FirebaseAuthException catch (e) {
@@ -119,7 +124,9 @@ class _LoginPageState extends State<LoginPage> {
                           print('등록되지 않은 이메일입니다.');
                         } else if (e.code == 'wrong-password'){
                           print('비밀번호가 틀렸습니다.');
-                        } else{
+                        } else if (e.code == 'invalid-email'){
+                          print("something is going");
+                        }else{
                           print(e.code);
                         }
                       }
