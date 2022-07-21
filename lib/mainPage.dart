@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:history_gamification/LoginPage.dart';
+import 'package:history_gamification/gamePage/storyMap.dart';
 import 'package:history_gamification/main.dart';
+import 'package:history_gamification/quizPage.dart';
+import 'package:history_gamification/rankingPage.dart';
+import 'package:history_gamification/settingPage.dart';
 
 class mainPage extends StatefulWidget {
   @override
@@ -24,7 +28,7 @@ class _mainPage extends State<mainPage> {
             child: ListView(
               padding: EdgeInsets.symmetric(horizontal: 80.0,vertical: 10),
               children: <Widget>[
-                Text('HOME', style: TextStyle(color:Colors.white,fontSize: 45.0)),
+                Text('HOME', style: TextStyle(color:Colors.white,fontSize: 45.0,fontWeight: FontWeight.bold)),
                 SizedBox(height: 2.0),
                 Center(
                   child: Container(
@@ -49,7 +53,7 @@ class _mainPage extends State<mainPage> {
                                       Text(
                                         'Profile',
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(fontSize:25, color:Colors.white),
+                                        style: TextStyle(fontSize:25, color:Colors.white, fontWeight: FontWeight.bold),
                                       )
                                     ]
                                   ),
@@ -71,28 +75,49 @@ class _mainPage extends State<mainPage> {
                                         Text(
                                           'Story',
                                           textAlign: TextAlign.center,
-                                          style: TextStyle(fontSize:25, color:Colors.white),
+                                          style: TextStyle(fontSize:25, color:Colors.white,fontWeight: FontWeight.bold),
                                         ),
                                         SizedBox( height: 20,),
-                                        Container(
-                                          height: 50.0,
-                                          width: 50.0,
-                                          decoration: BoxDecoration(
-                                            image: DecorationImage(
-                                              image: AssetImage('assets/images1/star.png'),
-                                            ),
-                                          ),
-                                       ),
-                                        /*
-                                        ElevatedButton.icon(
-                                            onPressed: (){
+                                        Row(
+                                          children: <Widget>[
+                                            SizedBox( width: 70,),
+                                            IconButton(
+                                              icon: Icon(
+                                                Icons.navigate_before,
+                                                color: Colors.white,
+                                                size: 30.0,
+                                              ),
+                                              onPressed: () {
+                                                print('next story');
                                                 Navigator.of(context)
                                                     .push(MaterialPageRoute(builder: (context) => LoginPage()));
-                                                },
-                                            icon: Icons.add_a_photo,
-                                            label: label
+                                              },
+                                            ),
+                                            SizedBox( width: 20,),
+                                              Container(
+                                                height: 60.0,
+                                                width: 60.0,
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                    image: AssetImage('assets/images1/star.png'),
+                                                  ),
+                                                ),
+                                              ),
+                                            SizedBox( width: 20,),
+                                            IconButton(
+                                              icon: Icon(
+                                                Icons.navigate_next,
+                                                color: Colors.white,
+                                                size: 30.0,
+                                              ),
+                                              onPressed: () {
+                                                print('next story');
+                                                Navigator.of(context)
+                                                    .push(MaterialPageRoute(builder: (context) => LoginPage()));
+                                              },
+                                            ),
+                                          ],
                                         )
-                                        */
                                     ]
                                   ),//BoxDecoration
                                 ), //Container
@@ -113,13 +138,27 @@ class _mainPage extends State<mainPage> {
                                       image: AssetImage('assets/images1/dark.png'),
                                     ),
                                   ),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                          image: AssetImage('assets/mainPage/Ranking_Button.png'),
+                                    child: Material(
+                                      color: Colors.transparent,
+                                      child: InkWell(
+                                        splashColor: Colors.black26,
+                                        onTap: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(builder: (context) => rankingPage()));
+                                        },
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            SizedBox( height: 5.0),
+                                            Ink.image(
+                                              image: AssetImage('assets/mainPage/rank.png'),
+                                              width: 60, height: 60,),
+                                            SizedBox(height: 2.0),
+                                            Text('Rank', style: TextStyle(fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold),)
+                                          ],
                                         ),
                                       ),
-                                    )//BoxDecoration
+                                    )
                                 ),
                                 SizedBox(  width: 10,),
                                 Container(
@@ -131,16 +170,28 @@ class _mainPage extends State<mainPage> {
                                       image: AssetImage('assets/images1/dark.png'),
                                     ),
                                   ),
-                                    child: Container(
-                                      width: 80,
-                                      height: 70,
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                          image: AssetImage('assets/mainPage/Quiz_Button.png'),
+                                    child: Material(
+                                      color: Colors.transparent,
+                                      child: InkWell(
+                                        splashColor: Colors.black26,
+                                        onTap: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(builder: (context) => quizPage()));
+                                        },
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            SizedBox( height: 5.0),
+                                            Ink.image(
+                                              image: AssetImage('assets/mainPage/quiz.png'),
+                                              width: 60, height: 60,),
+                                            SizedBox(height: 2.0),
+                                            Text('Quiz', style: TextStyle(fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold),)
+                                          ],
                                         ),
                                       ),
                                     )
-                                ), ///Container
+                                ),
                                 SizedBox(  width: 10,), //SizedBox
                                 Container(
                                     width: 100,
@@ -151,14 +202,24 @@ class _mainPage extends State<mainPage> {
                                       image: AssetImage('assets/images1/dark.png'),
                                     ),
                                   ),
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: AssetImage('assets/mainPage/setting_Button.png'),
+                                    child: Material(
+                                      color: Colors.transparent,
+                                      child: InkWell(
+                                        splashColor: Colors.black26,
+                                        onTap: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(builder: (context) => settingPage()));
+                                        },
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Ink.image(
+                                              image: AssetImage('assets/mainPage/setting_Button.png'),
+                                              width: 100, height: 100,),
+                                          ],
                                         ),
                                       ),
-                                  ),
+                                    )
                                 ),
                                 SizedBox(  width: 10,),
                                 Container(
@@ -176,9 +237,9 @@ class _mainPage extends State<mainPage> {
                                       ),
                                       onPressed: (){
                                         Navigator.of(context)
-                                            .push(MaterialPageRoute(builder: (context) => LoginPage()));
+                                            .push(MaterialPageRoute(builder: (context) => storyMap()));
                                       },
-                                      child: const Text('Game Start', style: TextStyle(fontSize: 25.0,color: Colors.white),
+                                      child: const Text('Game Start', style: TextStyle(fontSize: 25.0,color: Colors.white, fontWeight: FontWeight.bold),
                                       )
                                   ),//BoxedDecoration
                                 )//Container

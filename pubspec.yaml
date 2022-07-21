@@ -76,6 +76,8 @@ flutter:
     - assets/mainPage/Quiz_Button.png
     - assets/mainPage/Ranking_Button.png
     - assets/mainPage/setting_Button.png
+    - assets/mainPage/rank.png
+    - assets/mainPage/quiz.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
