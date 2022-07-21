@@ -66,20 +66,7 @@ class _registerPage extends State<registerPage> {
                           ),
                         ),
 
-                        Container(
-                          width: 75.0,
-                          child: ButtonBar(
-                            children: <Widget>[
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(primary: Color(0xff666699),),
-                                child: Text('인증'),
-                                onPressed: () {
-                                  FirebaseAuth.instance.currentUser?.sendEmailVerification();
-                                },
-                              ),
-                            ],
-                          ),
-                        )
+
 
                        ]
                       ),
@@ -141,7 +128,9 @@ class _registerPage extends State<registerPage> {
                                 }
                                 return value;
                               });
+                              FirebaseAuth.instance.currentUser?.sendEmailVerification();
                             }
+                            
                             on FirebaseAuthException catch (e) {
                               if(e.code == 'weak-password'){
                                 print('이 비밀번호는 너무 약합니다.');
@@ -154,6 +143,7 @@ class _registerPage extends State<registerPage> {
                               }
                               else{
                                 print('확인');
+
                               }
                             } catch (e){
                               Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
