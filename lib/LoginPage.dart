@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:history_gamification/checkMail.dart';
 import 'package:history_gamification/mainPage.dart';
 import 'package:history_gamification/registerPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -111,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
     UserCredential userCredential = await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: _usernameController.text, password: _passwordController.text).then((value){
     print(value);
-    value.user!.emailVerified == true ? Navigator.push(context,MaterialPageRoute(builder: (_) => mainPage())): print("인증되지 않은 이메일입니다.");
+    value.user!.emailVerified == true ? Navigator.push(context,MaterialPageRoute(builder: (_) => mainPage())): Navigator.push(context,MaterialPageRoute(builder: (_) => checkMail()));
     return value;//이메일 인증 여부 확인
     });
     } on FirebaseAuthException catch (e) {
