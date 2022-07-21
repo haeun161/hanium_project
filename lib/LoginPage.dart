@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:history_gamification/checkMail.dart';
 import 'package:history_gamification/mainPage.dart';
 import 'package:history_gamification/registerPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -112,7 +111,41 @@ class _LoginPageState extends State<LoginPage> {
     UserCredential userCredential = await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: _usernameController.text, password: _passwordController.text).then((value){
     print(value);
-    value.user!.emailVerified == true ? Navigator.push(context,MaterialPageRoute(builder: (_) => mainPage())): Navigator.push(context,MaterialPageRoute(builder: (_) => checkMail()));
+    value.user!.emailVerified == true ? Navigator.push(context,MaterialPageRoute(builder: (_) => mainPage())): showDialog(
+        context: context,
+        //barrierDismissible - Dialog를 제외한 다른 화면 터치 x
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            // RoundedRectangleBorder - Dialog 화면 모서리 둥글게 조절
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)),
+            //Dialog Main Title
+            title: Column(
+              children: <Widget>[
+                new Text("인증되지 않은 이메일입니다."),
+              ],
+            ),
+            //
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  "회원가입에서 인증을 진행해주세요.",
+                ),
+              ],
+            ),
+            actions: <Widget>[
+              new FlatButton(
+                child: new Text("확인"),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          );
+        });;
     return value;//이메일 인증 여부 확인
     });
     } on FirebaseAuthException catch (e) {

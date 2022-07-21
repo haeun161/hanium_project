@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:history_gamification/checkMail.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
 import 'LoginPage.dart';
 
 
@@ -76,8 +74,7 @@ class _registerPage extends State<registerPage> {
                                 style: ElevatedButton.styleFrom(primary: Color(0xff666699),),
                                 child: Text('인증'),
                                 onPressed: () {
-                                  Navigator.of(context)
-                                      .push(MaterialPageRoute(builder: (context) => checkMail()));
+                                  FirebaseAuth.instance.currentUser?.sendEmailVerification();
                                 },
                               ),
                             ],
@@ -144,9 +141,6 @@ class _registerPage extends State<registerPage> {
                                 }
                                 return value;
                               });
-                              FirebaseAuth.instance.currentUser?.sendEmailVerification();
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) =>checkMail()));
                             }
                             on FirebaseAuthException catch (e) {
                               if(e.code == 'weak-password'){
@@ -154,6 +148,9 @@ class _registerPage extends State<registerPage> {
                               }
                               else if (e.code == 'email-already-in-use'){
                                 print('해당 이메일에 대한 계정이 이미 존재합니다.');
+                              }
+                              else if (_passwordController.text != _passwordConfirm.text){
+                                print('비밀번호가 일치하지 않습니다.');
                               }
                               else{
                                 print('확인');
