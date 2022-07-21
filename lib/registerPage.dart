@@ -123,12 +123,13 @@ class _registerPage extends State<registerPage> {
                                   email: _usernameController.text,
                                   password: _passwordController.text).then((
                                   value) {
-                                if (value.user!.email == null) {} else {
-                                  Navigator.pop(context);
+                                if (value.user!.email != null) {
+                                  FirebaseAuth.instance.currentUser?.sendEmailVerification();
                                 }
                                 return value;
                               });
-                              FirebaseAuth.instance.currentUser?.sendEmailVerification();
+                              //FirebaseAuth.instance.currentUser?.sendEmailVerification();
+
                             }
                             
                             on FirebaseAuthException catch (e) {
