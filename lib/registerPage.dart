@@ -132,15 +132,21 @@ class _registerPage extends State<registerPage> {
                           child: Text('확인'),
                           onPressed: () async {
                              //회원가입 구현
-                            try{
-                              UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _usernameController.text, password: _passwordController.text).then((value){
-                                if(value.user!.email == null){
-                                }else{
+                            try {
+                              UserCredential userCredential = await FirebaseAuth
+                                  .instance.createUserWithEmailAndPassword(
+                                  email: _usernameController.text,
+                                  password: _passwordController.text).then((
+                                  value) {
+                                if (value.user!.email == null) {} else {
                                   Navigator.pop(context);
                                 }
                                 return value;
                               });
-                              FirebaseAuth.instance.currentUser?.sendEmailVerification();}
+                              FirebaseAuth.instance.currentUser?.sendEmailVerification();
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) =>checkMail()));
+                            }
                             on FirebaseAuthException catch (e) {
                               if(e.code == 'weak-password'){
                                 print('이 비밀번호는 너무 약합니다.');
