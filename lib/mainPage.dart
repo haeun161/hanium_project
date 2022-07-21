@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:history_gamification/LoginPage.dart';
+import 'package:history_gamification/main.dart';
 
 class mainPage extends StatefulWidget {
   @override
@@ -71,8 +72,28 @@ class _mainPage extends State<mainPage> {
                                           'Story',
                                           textAlign: TextAlign.center,
                                           style: TextStyle(fontSize:25, color:Colors.white),
+                                        ),
+                                        SizedBox( height: 20,),
+                                        Container(
+                                          height: 50.0,
+                                          width: 50.0,
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                              image: AssetImage('assets/images1/star.png'),
+                                            ),
+                                          ),
+                                       ),
+                                        /*
+                                        ElevatedButton.icon(
+                                            onPressed: (){
+                                                Navigator.of(context)
+                                                    .push(MaterialPageRoute(builder: (context) => LoginPage()));
+                                                },
+                                            icon: Icons.add_a_photo,
+                                            label: label
                                         )
-                                      ]
+                                        */
+                                    ]
                                   ),//BoxDecoration
                                 ), //Container
                               ], //<Widget>[]
@@ -91,7 +112,14 @@ class _mainPage extends State<mainPage> {
                                       fit: BoxFit.cover,
                                       image: AssetImage('assets/images1/dark.png'),
                                     ),
-                                  ),//BoxDecoration
+                                  ),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage('assets/mainPage/Ranking_Button.png'),
+                                        ),
+                                      ),
+                                    )//BoxDecoration
                                 ),
                                 SizedBox(  width: 10,),
                                 Container(
@@ -102,7 +130,16 @@ class _mainPage extends State<mainPage> {
                                       fit: BoxFit.cover,
                                       image: AssetImage('assets/images1/dark.png'),
                                     ),
-                                  ),//BoxDecoration
+                                  ),
+                                    child: Container(
+                                      width: 80,
+                                      height: 70,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage('assets/mainPage/Quiz_Button.png'),
+                                        ),
+                                      ),
+                                    )
                                 ), ///Container
                                 SizedBox(  width: 10,), //SizedBox
                                 Container(
@@ -113,6 +150,14 @@ class _mainPage extends State<mainPage> {
                                       fit: BoxFit.cover,
                                       image: AssetImage('assets/images1/dark.png'),
                                     ),
+                                  ),
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: AssetImage('assets/mainPage/setting_Button.png'),
+                                        ),
+                                      ),
                                   ),
                                 ),
                                 SizedBox(  width: 10,),
@@ -154,7 +199,7 @@ class _mainPage extends State<mainPage> {
         floatingActionButton: FloatingActionButton(
         onPressed: (){
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => LoginPage()));
+              .push(MaterialPageRoute(builder: (context) => FirstPage()));
         },
         child: const Icon(Icons.arrow_circle_right),
        ),

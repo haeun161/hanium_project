@@ -66,8 +66,6 @@ class _registerPage extends State<registerPage> {
                           ),
                         ),
 
-
-
                        ]
                       ),
                     ),
