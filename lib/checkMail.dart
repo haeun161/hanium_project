@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:history_gamification/registerPage.dart';
-import 'LoginPage.dart';
 
 
 class checkMail extends StatefulWidget {
@@ -56,7 +55,6 @@ class _checkMail extends State<checkMail> {
                                 controller: _usernameController,
                                 decoration: InputDecoration(
                                     filled: true,
-                                    labelText: 'Email',
                                     fillColor: Colors.white,
 
                                     enabledBorder: OutlineInputBorder(
@@ -72,7 +70,6 @@ class _checkMail extends State<checkMail> {
                                 controller: _usernameController,
                                 decoration: InputDecoration(
                                     filled: true,
-                                    labelText: 'Email',
                                     fillColor: Colors.white,
 
                                     enabledBorder: OutlineInputBorder(
@@ -88,7 +85,6 @@ class _checkMail extends State<checkMail> {
                                 controller: _usernameController,
                                 decoration: InputDecoration(
                                     filled: true,
-                                    labelText: 'Email',
                                     fillColor: Colors.white,
 
                                     enabledBorder: OutlineInputBorder(
@@ -103,23 +99,6 @@ class _checkMail extends State<checkMail> {
                                 controller: _usernameController,
                                 decoration: InputDecoration(
                                     filled: true,
-                                    labelText: 'Email',
-                                    fillColor: Colors.white,
-
-                                    enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(Radius.circular(5))
-                                    )
-                                ),
-                              ),
-                            ),
-
-                            Container(
-                              width: 40.0,
-                              child:TextField(
-                                controller: _usernameController,
-                                decoration: InputDecoration(
-                                    filled: true,
-                                    labelText: 'Email',
                                     fillColor: Colors.white,
 
                                     enabledBorder: OutlineInputBorder(
@@ -135,7 +114,21 @@ class _checkMail extends State<checkMail> {
                                 controller: _usernameController,
                                 decoration: InputDecoration(
                                     filled: true,
-                                    labelText: 'Email',
+                                    fillColor: Colors.white,
+
+                                    enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(5))
+                                    )
+                                ),
+                              ),
+                            ),
+
+                            Container(
+                              width: 40.0,
+                              child:TextField(
+                                controller: _usernameController,
+                                decoration: InputDecoration(
+                                    filled: true,
                                     fillColor: Colors.white,
 
                                     enabledBorder: OutlineInputBorder(

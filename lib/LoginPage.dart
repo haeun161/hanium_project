@@ -1,7 +1,4 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:history_gamification/main.dart';
 import 'package:history_gamification/mainPage.dart';
 import 'package:history_gamification/registerPage.dart';
 
