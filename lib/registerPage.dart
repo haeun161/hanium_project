@@ -121,17 +121,13 @@ class _registerPage extends State<registerPage> {
                               UserCredential userCredential = await FirebaseAuth
                                   .instance.createUserWithEmailAndPassword(
                                   email: _usernameController.text,
-                                  password: _passwordController.text).then((
-                                  value) {
-                                if (value.user!.email != null) {
-                                  FirebaseAuth.instance.currentUser?.sendEmailVerification();
-                                }
-                                return value;
-                              });
-                              //FirebaseAuth.instance.currentUser?.sendEmailVerification();
+                                  password: _passwordController.text);
+                              User? user = FirebaseAuth.instance.currentUser;
+                              if (!user!.emailVerified) {
+                                await user.sendEmailVerification();
+                              }
+                            }//FirebaseAuth.instance.currentUser?.sendEmailVerification();
 
-                            }
-                            
                             on FirebaseAuthException catch (e) {
                               if(e.code == 'weak-password'){
                                 print('이 비밀번호는 너무 약합니다.');
