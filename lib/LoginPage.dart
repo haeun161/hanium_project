@@ -103,6 +103,7 @@ class _LoginPageState extends State<LoginPage> {
               child: ButtonBar(
                 children: <Widget>[
                   ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Color(0xff9999FF),),
                     child: Text('OK'),
                     onPressed: () async{
                       //로그인 기능 구현 후
