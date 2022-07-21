@@ -117,12 +117,151 @@ class _LoginPageState extends State<LoginPage> {
     });
     } on FirebaseAuthException catch (e) {
                         if(e.code == 'user-not-found'){
-                          print('등록되지 않은 이메일입니다.');
+                          showDialog(
+                              context: context,
+                              //barrierDismissible - Dialog를 제외한 다른 화면 터치 x
+                              barrierDismissible: false,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  // RoundedRectangleBorder - Dialog 화면 모서리 둥글게 조절
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.0)),
+                                  //Dialog Main Title
+                                  title: Column(
+                                    children: <Widget>[
+                                      new Text("등록되지 않은 이메일입니다."),
+                                    ],
+                                  ),
+                                  //
+                                  content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        "가입하신 이메일이 맞는지 확인해주세요!",
+                                      ),
+                                    ],
+                                  ),
+                                  actions: <Widget>[
+                                    new FlatButton(
+                                      child: new Text("확인"),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                    ),
+                                  ],
+                                );
+                              });
+                          print('등록되지 않은 이메일');
                         } else if (e.code == 'wrong-password'){
+                          showDialog(
+                              context: context,
+                              //barrierDismissible - Dialog를 제외한 다른 화면 터치 x
+                              barrierDismissible: false,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  // RoundedRectangleBorder - Dialog 화면 모서리 둥글게 조절
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.0)),
+                                  //Dialog Main Title
+                                  title: Column(
+                                    children: <Widget>[
+                                      new Text("비밀번호 오류"),
+                                    ],
+                                  ),
+                                  //
+                                  content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        "입력하신 비밀번호가 맞는지 확인해주세요!",
+                                      ),
+                                    ],
+                                  ),
+                                  actions: <Widget>[
+                                    new FlatButton(
+                                      child: new Text("확인"),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                    ),
+                                  ],
+                                );
+                              });
                           print('비밀번호가 틀렸습니다.');
                         } else if (e.code == 'invalid-email'){
-                          print("something is going");
+                          showDialog(
+                              context: context,
+                              //barrierDismissible - Dialog를 제외한 다른 화면 터치 x
+                              barrierDismissible: false,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  // RoundedRectangleBorder - Dialog 화면 모서리 둥글게 조절
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.0)),
+                                  //Dialog Main Title
+                                  title: Column(
+                                    children: <Widget>[
+                                      new Text("이메일 형식 오류"),
+                                    ],
+                                  ),
+                                  //
+                                  content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        "이메일 형식이 잘못되었습니다.",
+                                      ),
+                                    ],
+                                  ),
+                                  actions: <Widget>[
+                                    new FlatButton(
+                                      child: new Text("확인"),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                    ),
+                                  ],
+                                );
+                              });
                         }else{
+                          showDialog(
+                              context: context,
+                              //barrierDismissible - Dialog를 제외한 다른 화면 터치 x
+                              barrierDismissible: false,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  // RoundedRectangleBorder - Dialog 화면 모서리 둥글게 조절
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.0)),
+                                  //Dialog Main Title
+                                  title: Column(
+                                    children: <Widget>[
+                                      new Text("e.code"),
+                                    ],
+                                  ),
+                                  //
+                                  content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        "Dialog Content",
+                                      ),
+                                    ],
+                                  ),
+                                  actions: <Widget>[
+                                    new FlatButton(
+                                      child: new Text("다시 시도해주세요!ㅔ"),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                    ),
+                                  ],
+                                );
+                              });
                           print(e.code);
                         }
                       }
