@@ -74,9 +74,7 @@ flutter:
     #login
     - assets/login/Login_back.png
     #mainPage
-    - assets/mainPage/Quiz_Button.png
-    - assets/mainPage/Ranking_Button.png
-    - assets/mainPage/setting_Button.png
+    - assets/mainPage/setting.png
     - assets/mainPage/rank.png
     - assets/mainPage/quiz.png
 

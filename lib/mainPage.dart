@@ -54,7 +54,17 @@ class _mainPage extends State<mainPage> {
                                         'Profile',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(fontSize:25, color:Colors.white, fontWeight: FontWeight.bold),
-                                      )
+                                      ),
+                                      SizedBox( height: 10),
+                                      CircleAvatar(
+                                        radius: 40,
+                                      ),
+                                      SizedBox( height: 10),
+                                      Text(
+                                        '이름',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(fontSize:15, color:Colors.white, fontWeight: FontWeight.bold),
+                                      ),
                                     ]
                                   ),
                                 ), //Container
@@ -77,10 +87,10 @@ class _mainPage extends State<mainPage> {
                                           textAlign: TextAlign.center,
                                           style: TextStyle(fontSize:25, color:Colors.white,fontWeight: FontWeight.bold),
                                         ),
-                                        SizedBox( height: 20,),
+                                        SizedBox( height: 5,),
                                         Row(
                                           children: <Widget>[
-                                            SizedBox( width: 70,),
+                                            SizedBox( width: 65,),
                                             IconButton(
                                               icon: Icon(
                                                 Icons.navigate_before,
@@ -88,7 +98,7 @@ class _mainPage extends State<mainPage> {
                                                 size: 30.0,
                                               ),
                                               onPressed: () {
-                                                print('next story');
+                                                print('before story');
                                                 Navigator.of(context)
                                                     .push(MaterialPageRoute(builder: (context) => LoginPage()));
                                               },
@@ -117,8 +127,12 @@ class _mainPage extends State<mainPage> {
                                               },
                                             ),
                                           ],
-                                        )
-                                    ]
+                                        ),
+                                        SizedBox( height: 2.0),
+                                        Text('  2-1', style: TextStyle(fontSize: 18.0, color: Colors.white, fontWeight: FontWeight.bold),),
+                                        Text('광개토대왕의 한강 장악', style: TextStyle(fontSize: 15.0, color: Colors.white, fontWeight: FontWeight.bold),),
+                                        Text('진행중', style: TextStyle(fontSize: 10.0, color: Colors.white, fontWeight: FontWeight.bold),),
+                                    ],
                                   ),//BoxDecoration
                                 ), //Container
                               ], //<Widget>[]
@@ -149,10 +163,10 @@ class _mainPage extends State<mainPage> {
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
-                                            SizedBox( height: 5.0),
+                                            SizedBox( height: 15.0),
                                             Ink.image(
                                               image: AssetImage('assets/mainPage/rank.png'),
-                                              width: 60, height: 60,),
+                                              width: 50, height: 50,),
                                             SizedBox(height: 2.0),
                                             Text('Rank', style: TextStyle(fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold),)
                                           ],
@@ -181,7 +195,7 @@ class _mainPage extends State<mainPage> {
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
-                                            SizedBox( height: 5.0),
+                                            SizedBox( height: 7.0),
                                             Ink.image(
                                               image: AssetImage('assets/mainPage/quiz.png'),
                                               width: 60, height: 60,),
@@ -214,7 +228,7 @@ class _mainPage extends State<mainPage> {
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
                                             Ink.image(
-                                              image: AssetImage('assets/mainPage/setting_Button.png'),
+                                              image: AssetImage('assets/mainPage/setting.png'),
                                               width: 100, height: 100,),
                                           ],
                                         ),
