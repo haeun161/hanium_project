@@ -183,6 +183,7 @@ class _LoginPageState extends State<LoginPage> {
                                       child: new Text("확인"),
                                       onPressed: () {
                                         Navigator.pop(context);
+                                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
                                       },
                                     ),
                                   ],
@@ -220,6 +221,7 @@ class _LoginPageState extends State<LoginPage> {
                                       child: new Text("확인"),
                                       onPressed: () {
                                         Navigator.pop(context);
+                                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
                                       },
                                     ),
                                   ],
@@ -257,6 +259,7 @@ class _LoginPageState extends State<LoginPage> {
                                       child: new Text("확인"),
                                       onPressed: () {
                                         Navigator.pop(context);
+                                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
                                       },
                                     ),
                                   ],
@@ -293,6 +296,7 @@ class _LoginPageState extends State<LoginPage> {
                                       child: new Text("다시 시도해주세요!"),
                                       onPressed: () {
                                         Navigator.pop(context);
+                                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
                                       },
                                     ),
                                   ],
@@ -300,7 +304,7 @@ class _LoginPageState extends State<LoginPage> {
                               });
                           print(e.code);
                         }
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
+                        // Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
                       }
                       //로그인 기능 구현 전
                       //Navigator.of(context)
