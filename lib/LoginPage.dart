@@ -75,7 +75,9 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextButton.styleFrom(
                       textStyle: const TextStyle(fontSize: 10),padding: EdgeInsets.all(0),
                     ),
-                    onPressed: null,
+                    onPressed: (){
+
+                    },
                     child: const Text('  아이디/비밀번호 찾기', style: TextStyle(fontWeight: FontWeight.bold),),
                   ),
                 ),

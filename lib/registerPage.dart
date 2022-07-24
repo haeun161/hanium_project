@@ -236,7 +236,6 @@ class _registerPage extends State<registerPage> {
                                     });
                               }
                               else{
-                                FirebaseAuth.instance.currentUser?.sendEmailVerification();
                                 showDialog(
                                     context: context,
                                     //barrierDismissible - Dialog를 제외한 다른 화면 터치 x
@@ -278,13 +277,11 @@ class _registerPage extends State<registerPage> {
                             } catch (e){
                               Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
                             }
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
                             User? user = FirebaseAuth.instance.currentUser;
                             if (!user!.emailVerified) {
                               await user.sendEmailVerification();
                             }
-
-                            //Navigator.of(context)
-                                //.push(MaterialPageRoute(builder: (context) => LoginPage()));
 
                           },
                         ),
