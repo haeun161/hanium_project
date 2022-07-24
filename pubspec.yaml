@@ -68,6 +68,7 @@ flutter:
     - assets/images1/background.jpg
     - assets/images1/dark_background.png
     - assets/images1/storymap_background.png
+    - assets/images1/storymap_background1.png
     - assets/images1/dark.png
     - assets/images1/bright.png
     - assets/images1/purple.png
