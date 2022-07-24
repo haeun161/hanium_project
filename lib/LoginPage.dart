@@ -298,6 +298,7 @@ class _LoginPageState extends State<LoginPage> {
                               });
                           print(e.code);
                         }
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
                       }
                       //로그인 기능 구현 전
                       //Navigator.of(context)

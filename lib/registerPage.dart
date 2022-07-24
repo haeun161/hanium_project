@@ -125,7 +125,6 @@ class _registerPage extends State<registerPage> {
                                   password: _passwordController.text);
                               User? user = FirebaseAuth.instance.currentUser;
                             }//FirebaseAuth.instance.currentUser?.sendEmailVerification();
-
                             on FirebaseAuthException catch (e) {
                               if(e.code == 'weak-password'){
                                 showDialog(
