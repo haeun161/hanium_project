@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; //가로방향 설정 위하여 추가
 import 'package:history_gamification/LoginPage.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:history_gamification/mainPage.dart';
 
 
 
@@ -84,7 +85,7 @@ class _FirstPageState extends State<FirstPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: (){
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => LoginPage()));
+              .push(MaterialPageRoute(builder: (context) => mainPage()));
         },
         child: const Icon(Icons.arrow_circle_right),
       ),
