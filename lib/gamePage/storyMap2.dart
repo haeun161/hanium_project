@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:history_gamification/gamePage/storyMap.dart';
 import 'package:history_gamification/mainPage.dart';
 
 
@@ -21,36 +22,41 @@ class _storyMap2 extends State<storyMap2> {
         ),
         child: SafeArea(
           child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 80.0,vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 60.0,vertical: 10),
               children: <Widget>[
                 Container(
-                    alignment: const Alignment(-1.2,0),
+                    height: 30.0,
+                    alignment: const Alignment(-1.0,0),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(primary: Color(0xff9999FF),),
                       child: const Text('Home'),
-                      onPressed: () async{
+                      onPressed: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) => mainPage()));
                       },
                     )
                 ),
-                SizedBox( height:140.0),
+                SizedBox( height:130.0),
                 Container(
-                  alignment: const Alignment(1.1,0),
+                  height: 80.0,
+                  alignment: const Alignment(-1.1,0),
                   child: IconButton(
                     icon: Icon(
-                      Icons.navigate_next,
+                      Icons.navigate_before,
                       color: Colors.white,
                       size: 70.0,
                     ),
                     onPressed: () {
-                      print('next story');
+                      print('before story');
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) => storyMap()));
                     },
                   ),
                 ),
-                SizedBox( height:15.0),
+
                 Row(
                   children: <Widget>[
+                    SizedBox( width:30.0),
                     Container(
                         height: 90,
                         width: 100,
@@ -71,7 +77,7 @@ class _storyMap2 extends State<storyMap2> {
                             ]
                         )
                     ),
-                    SizedBox( width:50.0),
+                    SizedBox( width:60.0),
                     Container(
                         height: 90,
                         width: 100,
@@ -92,7 +98,7 @@ class _storyMap2 extends State<storyMap2> {
                             ]
                         )
                     ),
-                    SizedBox( width:50.0),
+                    SizedBox( width:60.0),
                     Container(
                         height: 90,
                         width: 100,
@@ -113,7 +119,7 @@ class _storyMap2 extends State<storyMap2> {
                             ]
                         )
                     ),
-                    SizedBox( width:50.0),
+                    SizedBox( width:60.0),
                     Container(
                         height: 90,
                         width: 100,
