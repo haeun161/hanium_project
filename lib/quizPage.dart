@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:history_gamification/gamePage/storyMap.dart';
 import 'package:history_gamification/mainPage.dart';
+import 'package:history_gamification/quiz/medium/quiz1.dart';
 
 class quizPage extends StatefulWidget {
   @override
@@ -104,7 +105,7 @@ class _quizPage extends State<quizPage> {
                                           ),
                                           onPressed: (){
                                             Navigator.of(context)
-                                                .push(MaterialPageRoute(builder: (context) => storyMap()));
+                                                .push(MaterialPageRoute(builder: (context) =>quiz1()));
                                           },
                                           child: Text( '중',
                                             textAlign: TextAlign.center,
