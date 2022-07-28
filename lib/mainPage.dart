@@ -59,12 +59,16 @@ class _mainPage extends State<mainPage> {
                                       CircleAvatar(
                                         radius: 40,
                                       ),
-                                      SizedBox( height: 10),
-                                      Text(
-                                        '이름',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(fontSize:15, color:Colors.white, fontWeight: FontWeight.bold),
-                                      ),
+                                      SizedBox( height: 5),
+                                      Container(
+                                        width: 100,
+                                        child: Text(
+                                          'boom_pow_luv@naver.com',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(fontSize:15, color:Colors.white, fontWeight: FontWeight.bold),
+                                        ),
+                                      )
+
                                     ]
                                   ),
                                 ), //Container
