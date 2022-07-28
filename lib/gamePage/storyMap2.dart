@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:history_gamification/gamePage/storyMap2.dart';
+import 'package:history_gamification/gamePage/storyMap.dart';
 import 'package:history_gamification/mainPage.dart';
 
 
-class storyMap extends StatefulWidget {
+class storyMap2 extends StatefulWidget {
   @override
-  State<storyMap> createState() => _storyMap();
+  State<storyMap2> createState() => _storyMap2();
 }
 
-class _storyMap extends State<storyMap> {
+class _storyMap2 extends State<storyMap2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,23 +39,24 @@ class _storyMap extends State<storyMap> {
                 SizedBox( height:130.0),
                 Container(
                   height: 80.0,
-                  alignment: const Alignment(1,0),
+                  alignment: const Alignment(-1.1,0),
                   child: IconButton(
                     icon: Icon(
-                      Icons.navigate_next,
+                      Icons.navigate_before,
                       color: Colors.white,
                       size: 70.0,
                     ),
                     onPressed: () {
-                      print('next story');
+                      print('before story');
                       Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (context) => storyMap2()));
+                          .push(MaterialPageRoute(builder: (context) => storyMap()));
                     },
                   ),
                 ),
 
                 Row(
                   children: <Widget>[
+                    SizedBox( width:30.0),
                     Container(
                         height: 90,
                         width: 100,
@@ -69,7 +70,7 @@ class _storyMap extends State<storyMap> {
                             children: <Widget>[
                               SizedBox( height:35.0),
                               Text(
-                                '1',
+                                '5',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(fontSize:20, color:Colors.purple, fontWeight: FontWeight.bold),
                               ),
@@ -90,7 +91,7 @@ class _storyMap extends State<storyMap> {
                             children: <Widget>[
                               SizedBox( height:35.0),
                               Text(
-                                '2',
+                                '6',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(fontSize:20, color:Colors.purple, fontWeight: FontWeight.bold),
                               ),
@@ -111,7 +112,7 @@ class _storyMap extends State<storyMap> {
                             children: <Widget>[
                               SizedBox( height:35.0),
                               Text(
-                                '3',
+                                '7',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(fontSize:20, color:Colors.purple, fontWeight: FontWeight.bold),
                               ),
@@ -132,7 +133,7 @@ class _storyMap extends State<storyMap> {
                             children: <Widget>[
                               SizedBox( height:35.0),
                               Text(
-                                '4',
+                                '8',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(fontSize:20, color:Colors.purple, fontWeight: FontWeight.bold),
                               ),
