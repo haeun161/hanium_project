@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:history_gamification/gamePage/storyMap2.dart';
-import 'package:history_gamification/mainPage.dart';
+import 'package:history_gamification/quiz/timer.dart';
 import 'package:history_gamification/quizPage.dart';
-
+import 'dart:async';
 
 class quiz1 extends StatefulWidget {
   @override
@@ -25,35 +25,58 @@ class _quiz1 extends State<quiz1> {
           child: ListView(
               padding: EdgeInsets.symmetric(horizontal: 40.0,vertical: 10),
               children: <Widget>[
-                Container(//퀴즈 화면으로 돌아가는 버튼
-                    height: 30.0,
-                    alignment: const Alignment(-1.0,0),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(primary: Color(0xff9999FF),),
-                      child: const Text('Quiz'),
-                      onPressed: () {
-                        Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (context) => quizPage()));
-                      },
-                    )
-                ),
-                SizedBox( height:2.0),
+                SizedBox( height:8.0),
                 Container(
                   color:Color(0xffCCCCFF),
                     padding: const EdgeInsets.all(10.0),
-                  height: 310.0,
+                  height: 340.0,
                   width: 800,
                   alignment: const Alignment(0.9,0),
                   child: ListView(
                     children: <Widget>[
-                      Container( //타이머
-                        padding: EdgeInsets.symmetric(horizontal: 40.0),//선지
+                      SizedBox( height:10.0),
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 30.0),
                         height: 30,
-                        child: Container(
-                            color: Colors.white,
+                        child: Row( //Quiz,타이머
+                          children: [
+                            Container(//퀴즈 화면으로 돌아가는 버튼
+                                height: 30.0,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(primary: Color(0xff9999FF),),
+                                  child: const Text('Quiz'),
+                                  onPressed: () {
+                                    Navigator.of(context)
+                                        .push(MaterialPageRoute(builder: (context) => quizPage()));
+                                  },
+                                )
+                            ),
+                            SizedBox(width:20.0),
+                            Container( //타이머
+                              height: 30,
+                              child: Container(
+                                width: 470.0,
+                                color: Colors.white,
+                                child: Row(
+                                  children: [
+                                    Container( // 시계
+                                      width: 40.0,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage('assets/quiz/clock.png'),
+                                        ),
+                                      ),
+                                    ),
+                                    timer()
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      SizedBox(height:10.0),
+
+                      SizedBox(height:15.0),
 
                     Row(
                       children: <Widget>[
@@ -74,13 +97,14 @@ class _quiz1 extends State<quiz1> {
                           padding: const EdgeInsets.all(5.0),
                           alignment: const Alignment(1.1,0),
                           color: Colors.white,
-                          height: 200,
+                          height: 230,
                           width: 520,
                           child: ListView(
                             children: <Widget>[
                               Text('Q. (가) 시기에 있었던 일로 옳은 것을 <보기>에서 모두 고른 것은?',
                                 style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold ),
                               ),
+                              SizedBox(height:7.0),
                               Row(
                                 children: [
                                   SizedBox(width:5.0),
@@ -89,7 +113,7 @@ class _quiz1 extends State<quiz1> {
                                       SizedBox(height:5.0),
                                       Container(
                                         width: 200.0,
-                                        height: 160.0,
+                                        height: 180.0,
                                         child: ListView(
                                           children: [
                                             Container(
@@ -97,27 +121,27 @@ class _quiz1 extends State<quiz1> {
                                                 border: Border.all(color: Colors.black26, width: 3),
                                               ),
                                               child: Text('수의 양제는 여러 차례 고구려를 침략하였지만 모두 실패하고 결국 멸망하였다.',
-                                                style: TextStyle(fontSize: 13 ),
+                                                style: TextStyle(fontSize: 14 ),
                                               ),
                                             ),
-                                            SizedBox(height:5.0),
+                                            SizedBox(height:8.0),
                                             Container(
                                                 decoration: BoxDecoration(//모서리를 둥글게
                                                   border: Border.all(color: Colors.black26, width: 3),
                                                 ),
                                               child: Center(
                                                 child: Text('(가)',
-                                                  style: TextStyle(fontSize: 12 ),
+                                                  style: TextStyle(fontSize: 14 ),
                                                 ),
                                               )
                                             ),
-                                            SizedBox(height:5.0),
+                                            SizedBox(height:8.0),
                                             Container(
                                               decoration: BoxDecoration(//모서리를 둥글게
                                                 border: Border.all(color: Colors.black26, width: 3),
                                               ),
                                               child: Text('당의 군대는 약 90일간 안시성을 포위하고 공격하였으나 함락하지 못하고 당으로 돌아갔다.',
-                                                style: TextStyle(fontSize: 13 ),
+                                                style: TextStyle(fontSize: 14 ),
                                               ),
                                             )
                                           ],
@@ -130,7 +154,7 @@ class _quiz1 extends State<quiz1> {
                                     children: [
                                       Text('<보기>', style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold ),),
 
-                                      SizedBox(height:2.0),
+                                      SizedBox(height:8.0),
                                       Row(
                                         children: <Widget>[
                                           SizedBox(width:10.0),
@@ -139,7 +163,7 @@ class _quiz1 extends State<quiz1> {
                                               Container(
                                                 //보기1
                                                 width: 140.0,
-                                                height: 58.0,
+                                                height: 65.0,
                                                 decoration: BoxDecoration(//모서리를 둥글게
                                                   border: Border.all(color: Colors.black26, width: 3),
                                                   color: Color(0xffF5F5F5),
@@ -149,7 +173,7 @@ class _quiz1 extends State<quiz1> {
                                               SizedBox(height:12.0),
                                               Container(//보기3
                                                 width: 140.0,
-                                                height: 58.0,
+                                                height: 65.0,
                                                 decoration: BoxDecoration(//모서리를 둥글게
                                                   border: Border.all(color: Colors.black26, width: 3),
                                                   color: Color(0xffF5F5F5),
@@ -163,7 +187,7 @@ class _quiz1 extends State<quiz1> {
                                             children: [
                                               Container(//보기2
                                                 width: 140.0,
-                                                height: 58.0,
+                                                height: 65.0,
                                                 decoration: BoxDecoration(//모서리를 둥글게
                                                   border: Border.all(color: Colors.black26, width: 3),
                                                   color: Color(0xffF5F5F5),
@@ -173,7 +197,7 @@ class _quiz1 extends State<quiz1> {
                                               SizedBox(height:12.0),
                                               Container(//보기4
                                                 width: 140.0,
-                                                height: 58.0,
+                                                height: 65.0,
                                                 decoration: BoxDecoration(//모서리를 둥글게
                                                   border: Border.all(color: Colors.black26, width: 3),
                                                   color: Color(0xffF5F5F5),
@@ -191,7 +215,6 @@ class _quiz1 extends State<quiz1> {
                                 ],
                               ),
 
-                              
                             ],
                           ),
                         ),
@@ -211,7 +234,6 @@ class _quiz1 extends State<quiz1> {
 
                       ]
                     ),
-                      SizedBox(height:1.0),
 
                       Row(
                         children: [
@@ -225,7 +247,7 @@ class _quiz1 extends State<quiz1> {
                                   Navigator.of(context)
                                       .push(MaterialPageRoute(builder: (context) => quizPage()));
                                 },
-                                child: const Text('1. ㄱ,ㄴ', style: TextStyle(fontSize: 15.0,color: Colors.white, fontWeight: FontWeight.bold),
+                                child: const Text('1. ㄱ,ㄴ', style: TextStyle(fontSize: 18.0,color: Colors.white, fontWeight: FontWeight.bold),
                                 )
                             ),
                           ),
@@ -239,7 +261,7 @@ class _quiz1 extends State<quiz1> {
                                   Navigator.of(context)
                                       .push(MaterialPageRoute(builder: (context) => quizPage()));
                                 },
-                                child: const Text('2. ㄱ,ㄷ', style: TextStyle(fontSize: 15.0,color: Colors.white, fontWeight: FontWeight.bold),
+                                child: const Text('2. ㄱ,ㄷ', style: TextStyle(fontSize: 18.0,color: Colors.white, fontWeight: FontWeight.bold),
                                 )
                             ),
                           ),
@@ -253,7 +275,7 @@ class _quiz1 extends State<quiz1> {
                                   Navigator.of(context)
                                       .push(MaterialPageRoute(builder: (context) => quizPage()));
                                 },
-                                child: const Text('3. ㄱ,ㄹ', style: TextStyle(fontSize: 15.0,color: Colors.white, fontWeight: FontWeight.bold),
+                                child: const Text('3. ㄱ,ㄹ', style: TextStyle(fontSize: 18.0,color: Colors.white, fontWeight: FontWeight.bold),
                                 )
                             ),
                           ),
@@ -267,7 +289,7 @@ class _quiz1 extends State<quiz1> {
                                   Navigator.of(context)
                                       .push(MaterialPageRoute(builder: (context) => quizPage()));
                                 },
-                                child: const Text('4. ㄴ,ㄷ', style: TextStyle(fontSize: 15.0,color: Colors.white, fontWeight: FontWeight.bold),
+                                child: const Text('4. ㄴ,ㄷ', style: TextStyle(fontSize: 18.0,color: Colors.white, fontWeight: FontWeight.bold),
                                 )
                             ),
                           ),
@@ -281,7 +303,7 @@ class _quiz1 extends State<quiz1> {
                                   Navigator.of(context)
                                       .push(MaterialPageRoute(builder: (context) => quizPage()));
                                 },
-                                child: const Text('5. ㄷ,ㄹ', style: TextStyle(fontSize: 15.0,color: Colors.white, fontWeight: FontWeight.bold),
+                                child: const Text('5. ㄷ,ㄹ', style: TextStyle(fontSize: 18.0,color: Colors.white, fontWeight: FontWeight.bold),
                                 )
                             ),
                           ),

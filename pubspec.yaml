@@ -80,6 +80,8 @@ flutter:
     - assets/mainPage/setting.png
     - assets/mainPage/rank.png
     - assets/mainPage/quiz.png
+    #quiz
+    - assets/quiz/clock.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
