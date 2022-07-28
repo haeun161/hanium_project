@@ -3,15 +3,21 @@ import 'package:history_gamification/LoginPage.dart';
 import 'package:history_gamification/gamePage/storyMap.dart';
 import 'package:history_gamification/main.dart';
 import 'package:history_gamification/quizPage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:history_gamification/rankingPage.dart';
 import 'package:history_gamification/settingPage.dart';
+
+
 
 class mainPage extends StatefulWidget {
   @override
   State< mainPage> createState() => _mainPage();
 }
 
+final FirebaseAuth auth = FirebaseAuth.instance;
+
 class _mainPage extends State<mainPage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +67,8 @@ class _mainPage extends State<mainPage> {
                                       ),
                                       SizedBox( height: 10),
                                       Text(
-                                        '이름',
+                                        auth.currentUser!.email.toString()
+                                        ,
                                         textAlign: TextAlign.center,
                                         style: TextStyle(fontSize:15, color:Colors.white, fontWeight: FontWeight.bold),
                                       ),
