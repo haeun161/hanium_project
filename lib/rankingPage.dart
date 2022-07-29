@@ -13,7 +13,7 @@ class _rankingPage extends State<rankingPage> {
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage('assets/images1/background.jpg'), // 배경 이미지
+              image: AssetImage('assets/ranking/bgr_ver2.png'), // 배경 이미지
             ),
           ),
         )
