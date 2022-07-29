@@ -68,6 +68,7 @@ class _quiz1 extends State<quiz1> {
                                       ),
                                     ),
                                     timer()
+
                                   ],
                                 ),
                               ),
