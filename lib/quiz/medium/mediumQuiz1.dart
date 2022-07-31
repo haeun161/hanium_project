@@ -127,7 +127,9 @@ class _mediumQuiz1 extends State<mediumQuiz1> {
                                                         border: Border.all(color: Colors.black26, width: 3),
                                                         color: Color(0xffF5F5F5),
                                                       ),
-                                                      child: Text('1. 충장',),
+                                                      child: Center(
+                                                        child: Text('1. 충장',),
+                                                      )
                                                     ),
                                                     SizedBox(height:12.0),
                                                     Container(//보기3
@@ -137,7 +139,9 @@ class _mediumQuiz1 extends State<mediumQuiz1> {
                                                         border: Border.all(color: Colors.black26, width: 3),
                                                         color: Color(0xffF5F5F5),
                                                       ),
-                                                      child: Text('3. 황무'),
+                                                      child: Center(
+                                                        child:Text('3. 황무'),
+                                                      )
                                                     )
                                                   ],
                                                 ),
@@ -151,7 +155,9 @@ class _mediumQuiz1 extends State<mediumQuiz1> {
                                                         border: Border.all(color: Colors.black26, width: 3),
                                                         color: Color(0xffF5F5F5),
                                                       ),
-                                                      child: Text('2.문충'),
+                                                      child: Center(
+                                                        child: Text('2.문충'),
+                                                      )
                                                     ),
                                                     SizedBox(height:12.0),
                                                     Container(//보기4
@@ -161,7 +167,9 @@ class _mediumQuiz1 extends State<mediumQuiz1> {
                                                         border: Border.all(color: Colors.black26, width: 3),
                                                         color: Color(0xffF5F5F5),
                                                       ),
-                                                      child: Text('4.무열'),
+                                                      child: Center(
+                                                        child: Text('4.무열'),
+                                                      )
                                                     )
                                                   ],
 

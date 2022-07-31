@@ -127,7 +127,10 @@ class _easyQuiz1 extends State<easyQuiz1> {
                                                         border: Border.all(color: Colors.black26, width: 3),
                                                         color: Color(0xffF5F5F5),
                                                       ),
-                                                      child: Text('1. 2배',),
+                                                      child: Center(
+                                                        child:  Text('1. 2배',),
+                                                      )
+
                                                     ),
                                                     SizedBox(height:12.0),
                                                     Container(//보기3
@@ -137,7 +140,9 @@ class _easyQuiz1 extends State<easyQuiz1> {
                                                         border: Border.all(color: Colors.black26, width: 3),
                                                         color: Color(0xffF5F5F5),
                                                       ),
-                                                      child: Text('3. 5배'),
+                                                      child: Center(
+                                                        child: Text('3. 5배'),
+                                                      )
                                                     )
                                                   ],
                                                 ),
@@ -151,7 +156,9 @@ class _easyQuiz1 extends State<easyQuiz1> {
                                                         border: Border.all(color: Colors.black26, width: 3),
                                                         color: Color(0xffF5F5F5),
                                                       ),
-                                                      child: Text('2. 3배'),
+                                                      child: Center(
+                                                        child: Text('2. 3배'),
+                                                      )
                                                     ),
                                                     SizedBox(height:12.0),
                                                     Container(//보기4
@@ -161,7 +168,9 @@ class _easyQuiz1 extends State<easyQuiz1> {
                                                         border: Border.all(color: Colors.black26, width: 3),
                                                         color: Color(0xffF5F5F5),
                                                       ),
-                                                      child: Text('4. 10배'),
+                                                      child: Center(
+                                                        child: Text('4. 10배'),
+                                                      )
                                                     )
                                                   ],
 
