@@ -286,7 +286,7 @@ class _mainPage extends State<mainPage> {
         floatingActionButton: FloatingActionButton(
         onPressed: (){
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => FirstPage()));
+              .push(MaterialPageRoute(builder: (context) => rankingPage()));
         },
         child: const Icon(Icons.arrow_circle_right),
        ),
