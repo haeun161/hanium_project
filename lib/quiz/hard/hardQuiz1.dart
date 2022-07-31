@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:history_gamification/gamePage/storyMap2.dart';
 import 'package:history_gamification/quiz/timer.dart';
 import 'package:history_gamification/quizPage.dart';
-import 'dart:async';
 
-class quiz1 extends StatefulWidget {
+class hardQuiz1 extends StatefulWidget {
   @override
-  State<quiz1> createState() => _quiz1();
+  State<hardQuiz1> createState() => _hardQuiz1();
 }
 
-class _quiz1 extends State<quiz1> {
+class _hardQuiz1 extends State<hardQuiz1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

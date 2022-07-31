@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:history_gamification/gamePage/storyMap.dart';
 import 'package:history_gamification/mainPage.dart';
-import 'package:history_gamification/quiz/medium/quiz1.dart';
+import 'package:history_gamification/quiz/easy/easyQuiz1.dart';
+import 'package:history_gamification/quiz/hard/hardQuiz1.dart';
+import 'package:history_gamification/quiz/medium/mediumQuiz1.dart';
 
 class quizPage extends StatefulWidget {
   @override
@@ -76,7 +78,7 @@ class _quizPage extends State<quizPage> {
                                           ),
                                           onPressed: (){
                                             Navigator.of(context)
-                                                .push(MaterialPageRoute(builder: (context) => storyMap()));
+                                                .push(MaterialPageRoute(builder: (context) =>easyQuiz1()));
                                           },
                                           child: Text( '하',
                                             textAlign: TextAlign.center,
@@ -105,7 +107,7 @@ class _quizPage extends State<quizPage> {
                                           ),
                                           onPressed: (){
                                             Navigator.of(context)
-                                                .push(MaterialPageRoute(builder: (context) =>quiz1()));
+                                                .push(MaterialPageRoute(builder: (context) =>mediumQuiz1()));
                                           },
                                           child: Text( '중',
                                             textAlign: TextAlign.center,
@@ -134,7 +136,7 @@ class _quizPage extends State<quizPage> {
                                           ),
                                           onPressed: (){
                                             Navigator.of(context)
-                                                .push(MaterialPageRoute(builder: (context) => storyMap()));
+                                                .push(MaterialPageRoute(builder: (context) =>hardQuiz1()));
                                           },
                                           child: Text( '상',
                                             textAlign: TextAlign.center,
