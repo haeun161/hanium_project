@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:history_gamification/main.dart';
+import 'package:history_gamification/mainPage.dart';
 
 class rankingPage extends StatefulWidget {
   @override
@@ -23,7 +25,7 @@ class _rankingPage extends State<rankingPage> {
               ),
               
               Container(  // RANKING 제목
-                padding: EdgeInsets.only(bottom:300.0),
+                padding: EdgeInsets.only(bottom:275.0),
                 child:Center(
                   child:Stack(children: <Widget>[
                     Image.asset('assets/ranking/RANKINGbgr.png', width: 150.0),
@@ -31,18 +33,18 @@ class _rankingPage extends State<rankingPage> {
                         width: 150.0,
                         child: Text(
                           "RANKING", textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, height: 2.1, fontSize: 20),))],))
+                          style: TextStyle(color: Colors.white, height: 2.3, fontSize: 20),))],))
               ),
 
               Container(  // 1위~3위
-                padding: EdgeInsets.only(top: 100.0, left: 230.0, right: 230.0),
+                padding: EdgeInsets.only(top: 100.0, left: 220.0, right: 220.0),
                 child: Row(mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget> [
-                    Image.asset('assets/ranking/top3.png', width: 110.0),
+                    Image.asset('assets/ranking/top3.png', width: 100.0),
                     Spacer(), // default: flex:1
-                    Image.asset('assets/ranking/top3.png', width: 110.0),
+                    Image.asset('assets/ranking/top3.png', width: 100.0),
                     Spacer(),
-                    Image.asset('assets/ranking/top3.png', width: 110.0)
+                    Image.asset('assets/ranking/top3.png', width: 100.0)
                 ],),
               ),
 
@@ -58,7 +60,14 @@ class _rankingPage extends State<rankingPage> {
                 ),
               )
             ],),
-        )
+        ),
+
+        floatingActionButton: FloatingActionButton(
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => mainPage()));
+            },
+            child: const Icon(Icons.arrow_circle_right),
+    ),
     );
   }
 }
