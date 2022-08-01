@@ -24,7 +24,6 @@ class _mediumQuiz1 extends State<mediumQuiz1> {
           child: ListView(
               padding: EdgeInsets.symmetric(horizontal: 40.0,vertical: 10),
               children: <Widget>[
-                SizedBox( height:8.0),
                 Container(
                     color:Color(0xffCCCCFF),
                     padding: const EdgeInsets.all(10.0),

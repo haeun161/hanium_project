@@ -31,7 +31,9 @@ class _timer extends State<timer>
       });
     });
 
-    animationController.repeat(reverse: false);
+    //animationController.repeat(reverse: false);
+    animationController.forward();
+
     super.initState();
 
     //50초 타이머

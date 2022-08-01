@@ -25,7 +25,7 @@ class _storyMap extends State<storyMap> {
               padding: EdgeInsets.symmetric(horizontal: 60.0,vertical: 10),
               children: <Widget>[
                 Container(
-                    height: 30.0,
+                    height: 50.0,
                     alignment: const Alignment(-1.0,0),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(primary: Color(0xff9999FF),),
@@ -36,7 +36,7 @@ class _storyMap extends State<storyMap> {
                       },
                     )
                 ),
-                SizedBox( height:130.0),
+                SizedBox( height:110.0),
                 Container(
                   height: 80.0,
                   alignment: const Alignment(1,0),
