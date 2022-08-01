@@ -32,10 +32,9 @@ class _mainPage extends State<mainPage> {
 
           child: SafeArea(
             child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 80.0,vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 80.0,vertical: 5.0),
               children: <Widget>[
                 Text('HOME', style: TextStyle(color:Colors.white,fontSize: 45.0,fontWeight: FontWeight.bold)),
-                SizedBox(height: 2.0),
                 Center(
                   child: Container(
                       child: Padding(
