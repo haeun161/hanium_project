@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:history_gamification/gamePage/storyMap.dart';
 import 'package:history_gamification/mainPage.dart';
 import 'package:history_gamification/quiz/easy/easyQuiz1.dart';
 import 'package:history_gamification/quiz/hard/hardQuiz1.dart';
@@ -15,7 +14,7 @@ class _quizPage extends State<quizPage> {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
               image: AssetImage('assets/images1/background.jpg'), // 배경 이미지
@@ -41,18 +40,18 @@ class _quizPage extends State<quizPage> {
                   child: Container(
                     height: 300.0,
                     width: 480.0,
-                    color: Color(0xff9999FF),
+                    color: const Color(0xff9999FF),
                     child: ListView(
                         children:<Widget>[
                           SizedBox( height:10.0),
                           Container(
                               alignment: const Alignment(-0.8,0),
-                              child: Text('퀴즈',
+                              child: const Text('퀴즈',
                                 style: TextStyle(fontSize: 40, color: Colors.white,fontWeight: FontWeight.bold),)
                           ),
                           Container(
                               alignment: const Alignment(-0.5,0),
-                              child: Text('문제의 난이도(상, 중, 하)를 선택하세요.',
+                              child: const Text('문제의 난이도(상, 중, 하)를 선택하세요.',
                                 style: TextStyle(fontSize: 20, color: Colors.white),)
                           ),
 
@@ -63,7 +62,7 @@ class _quizPage extends State<quizPage> {
                               Container(
                                   height: 90,
                                   width: 105,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     image: DecorationImage(
                                       fit: BoxFit.cover,
                                       image: AssetImage('assets/images1/star.png'),
@@ -92,7 +91,7 @@ class _quizPage extends State<quizPage> {
                               Container(
                                   height: 90,
                                   width: 105,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     image: DecorationImage(
                                       fit: BoxFit.cover,
                                       image: AssetImage('assets/images1/star.png'),
@@ -121,7 +120,7 @@ class _quizPage extends State<quizPage> {
                               Container(
                                   height: 90,
                                   width: 105,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     image: DecorationImage(
                                       fit: BoxFit.cover,
                                       image: AssetImage('assets/images1/star.png'),
