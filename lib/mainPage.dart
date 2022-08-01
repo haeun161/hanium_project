@@ -46,7 +46,7 @@ class _mainPage extends State<mainPage> {
                               children: <Widget>[
                                 Container(
                                   width: 230,
-                                  height: 180,
+                                  height: 170,
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
                                       fit: BoxFit.cover,
@@ -55,7 +55,7 @@ class _mainPage extends State<mainPage> {
                                   ),
                                   child: Column(
                                     children: <Widget>[
-                                      SizedBox( height: 15,),
+                                      SizedBox( height: 10,),
                                       Text(
                                         'Profile',
                                         textAlign: TextAlign.center,
@@ -84,7 +84,7 @@ class _mainPage extends State<mainPage> {
 
                                 Container(
                                     width: 320,
-                                    height: 180,
+                                    height: 170,
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
                                       fit: BoxFit.cover,
@@ -93,7 +93,7 @@ class _mainPage extends State<mainPage> {
                                   ),
                                   child: Column(
                                       children: <Widget>[
-                                        SizedBox( height: 15,),
+                                        SizedBox( height: 10,),
                                         Text(
                                           'Story',
                                           textAlign: TextAlign.center,
