@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:history_gamification/gamePage/storyMap2.dart';
+import 'package:history_gamification/quiz/hard/hardQuiz2.dart';
 import 'package:history_gamification/quiz/timer.dart';
 import 'package:history_gamification/quizPage.dart';
 
@@ -89,7 +90,7 @@ class _hardQuiz1 extends State<hardQuiz1> {
                           onPressed: () {
                             print('next story');
                             Navigator.of(context)
-                                .push(MaterialPageRoute(builder: (context) => storyMap2()));
+                                .push(MaterialPageRoute(builder: (context) => hardQuiz2()));
                           },
                         ),
                         SizedBox(width:12.0),
@@ -228,7 +229,7 @@ class _hardQuiz1 extends State<hardQuiz1> {
                           onPressed: () {
                             print('next story');
                             Navigator.of(context)
-                                .push(MaterialPageRoute(builder: (context) => storyMap2()));
+                                .push(MaterialPageRoute(builder: (context) => hardQuiz2()));
                           },
                         ),
 

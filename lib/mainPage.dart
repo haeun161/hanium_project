@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:history_gamification/Intro/intro1.dart';
 import 'package:history_gamification/main.dart';
 import 'package:history_gamification/LoginPage.dart';
 import 'package:history_gamification/gamePage/storyMap.dart';
@@ -282,13 +283,13 @@ class _mainPage extends State<mainPage> {
             ),
           ),
         ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: (){
-      //     Navigator.of(context)
-      //         .push(MaterialPageRoute(builder: (context) => mainPage()));
-      //   },
-      //   child: const Icon(Icons.arrow_circle_right),
-      // ),
+      floatingActionButton: FloatingActionButton(
+         onPressed: (){
+           Navigator.of(context)
+               .push(MaterialPageRoute(builder: (context) => intro1()));
+         },
+         child: const Icon(Icons.arrow_circle_right),
+       ),
     );
   }
 }

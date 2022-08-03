@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:history_gamification/gamePage/storyMap2.dart';
+import 'package:history_gamification/quiz/easy/easyQuiz2.dart';
 import 'package:history_gamification/quiz/timer.dart';
 import 'package:history_gamification/quizPage.dart';
 
@@ -87,9 +88,9 @@ class _easyQuiz1 extends State<easyQuiz1> {
                                   size: 50.0,
                                 ),
                                 onPressed: () {
-                                  print('next story');
+                                  print('before story');
                                   Navigator.of(context)
-                                      .push(MaterialPageRoute(builder: (context) => storyMap2()));
+                                      .push(MaterialPageRoute(builder: (context) => easyQuiz1()));
                                 },
                               ),
                               SizedBox(width:12.0),
@@ -121,28 +122,28 @@ class _easyQuiz1 extends State<easyQuiz1> {
                                                   children: [
                                                     Container(
                                                       //보기1
-                                                      width: 140.0,
-                                                      height: 65.0,
-                                                      decoration: BoxDecoration(//모서리를 둥글게
-                                                        border: Border.all(color: Colors.black26, width: 3),
-                                                        color: Color(0xffF5F5F5),
-                                                      ),
-                                                      child: Center(
-                                                        child:  Text('1. 2배',),
-                                                      )
+                                                        width: 140.0,
+                                                        height: 65.0,
+                                                        decoration: BoxDecoration(//모서리를 둥글게
+                                                          border: Border.all(color: Colors.black26, width: 3),
+                                                          color: Color(0xffF5F5F5),
+                                                        ),
+                                                        child: Center(
+                                                          child:  Text('1. 2배',),
+                                                        )
 
                                                     ),
                                                     SizedBox(height:12.0),
                                                     Container(//보기3
-                                                      width: 140.0,
-                                                      height: 65.0,
-                                                      decoration: BoxDecoration(//모서리를 둥글게
-                                                        border: Border.all(color: Colors.black26, width: 3),
-                                                        color: Color(0xffF5F5F5),
-                                                      ),
-                                                      child: Center(
-                                                        child: Text('3. 5배'),
-                                                      )
+                                                        width: 140.0,
+                                                        height: 65.0,
+                                                        decoration: BoxDecoration(//모서리를 둥글게
+                                                          border: Border.all(color: Colors.black26, width: 3),
+                                                          color: Color(0xffF5F5F5),
+                                                        ),
+                                                        child: Center(
+                                                          child: Text('3. 5배'),
+                                                        )
                                                     )
                                                   ],
                                                 ),
@@ -150,27 +151,27 @@ class _easyQuiz1 extends State<easyQuiz1> {
                                                 Column( //보기2,보기4
                                                   children: [
                                                     Container(//보기2
-                                                      width: 140.0,
-                                                      height: 65.0,
-                                                      decoration: BoxDecoration(//모서리를 둥글게
-                                                        border: Border.all(color: Colors.black26, width: 3),
-                                                        color: Color(0xffF5F5F5),
-                                                      ),
-                                                      child: Center(
-                                                        child: Text('2. 3배'),
-                                                      )
+                                                        width: 140.0,
+                                                        height: 65.0,
+                                                        decoration: BoxDecoration(//모서리를 둥글게
+                                                          border: Border.all(color: Colors.black26, width: 3),
+                                                          color: Color(0xffF5F5F5),
+                                                        ),
+                                                        child: Center(
+                                                          child: Text('2. 3배'),
+                                                        )
                                                     ),
                                                     SizedBox(height:12.0),
                                                     Container(//보기4
-                                                      width: 140.0,
-                                                      height: 65.0,
-                                                      decoration: BoxDecoration(//모서리를 둥글게
-                                                        border: Border.all(color: Colors.black26, width: 3),
-                                                        color: Color(0xffF5F5F5),
-                                                      ),
-                                                      child: Center(
-                                                        child: Text('4. 10배'),
-                                                      )
+                                                        width: 140.0,
+                                                        height: 65.0,
+                                                        decoration: BoxDecoration(//모서리를 둥글게
+                                                          border: Border.all(color: Colors.black26, width: 3),
+                                                          color: Color(0xffF5F5F5),
+                                                        ),
+                                                        child: Center(
+                                                          child: Text('4. 10배'),
+                                                        )
                                                     )
                                                   ],
 
@@ -198,7 +199,7 @@ class _easyQuiz1 extends State<easyQuiz1> {
                                 onPressed: () {
                                   print('next story');
                                   Navigator.of(context)
-                                      .push(MaterialPageRoute(builder: (context) => storyMap2()));
+                                      .push(MaterialPageRoute(builder: (context) => easyQuiz2()));
                                 },
                               ),
 
@@ -207,7 +208,7 @@ class _easyQuiz1 extends State<easyQuiz1> {
 
                         Row(
                           children: [
-                            SizedBox(width:80.0),
+                            SizedBox(width:150.0),
                             Container(
                               child: TextButton(
                                   style: TextButton.styleFrom(
@@ -264,19 +265,7 @@ class _easyQuiz1 extends State<easyQuiz1> {
                               ),
                             ),
                             SizedBox(width:30.0),
-                            Container(
-                              child: TextButton(
-                                  style: TextButton.styleFrom(
-                                    textStyle: const TextStyle(fontSize: 10),padding: EdgeInsets.all(0),
-                                  ),
-                                  onPressed: (){
-                                    Navigator.of(context)
-                                        .push(MaterialPageRoute(builder: (context) => quizPage()));
-                                  },
-                                  child: const Text('5', style: TextStyle(fontSize: 18.0,color: Colors.white, fontWeight: FontWeight.bold),
-                                  )
-                              ),
-                            ),
+
                           ],
                         )
                       ],

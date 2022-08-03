@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:history_gamification/gamePage/storyMap2.dart';
-import 'package:history_gamification/quiz/medium/mediumQuiz2.dart';
+import 'package:history_gamification/quiz/hard/hardQuiz3.dart';
 import 'package:history_gamification/quiz/timer.dart';
 import 'package:history_gamification/quizPage.dart';
 
-class mediumQuiz1 extends StatefulWidget {
+class hardQuiz2 extends StatefulWidget {
   @override
-  State<mediumQuiz1> createState() => _mediumQuiz1();
+  State<hardQuiz2> createState() => _hardQuiz2();
 }
 
-class _mediumQuiz1 extends State<mediumQuiz1> {
+class _hardQuiz2 extends State<hardQuiz2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,7 +101,7 @@ class _mediumQuiz1 extends State<mediumQuiz1> {
                                 width: 520,
                                 child: ListView(
                                   children: <Widget>[
-                                    Text('Q. 행주대첩 당시 일본군은 몇 군에 걸쳐 처들어왔는가?',
+                                    Text('Q. 행주대첩을 승리로 이끈 권율 장군이 사후에 받은 시호는?',
                                       style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold ),
                                     ),
                                     SizedBox(height:7.0),
@@ -117,67 +117,21 @@ class _mediumQuiz1 extends State<mediumQuiz1> {
                                             Row(
                                               children: <Widget>[
                                                 SizedBox(width:10.0),
-                                                Column( //보기1,보기4
+                                                Column( //보기1,보기3
                                                   children: [
                                                     Container(
                                                       //보기1
-                                                      width: 140.0,
-                                                      height: 65.0,
-                                                      decoration: BoxDecoration(//모서리를 둥글게
-                                                        border: Border.all(color: Colors.black26, width: 3),
-                                                        color: Color(0xffF5F5F5),
-                                                      ),
-                                                      child: Center(
-                                                        child: Text('1. 3군',style: TextStyle(fontWeight: FontWeight.bold),),
-                                                      )
+                                                        width: 140.0,
+                                                        height: 65.0,
+                                                        decoration: BoxDecoration(//모서리를 둥글게
+                                                          border: Border.all(color: Colors.black26, width: 3),
+                                                          color: Color(0xffF5F5F5),
+                                                        ),
+                                                        child: Center(
+                                                          child: Text('1. 충장',),
+                                                        )
                                                     ),
                                                     SizedBox(height:12.0),
-                                                    Container(//보기4
-                                                      width: 140.0,
-                                                      height: 65.0,
-                                                      decoration: BoxDecoration(//모서리를 둥글게
-                                                        border: Border.all(color: Colors.black26, width: 3),
-                                                        color: Color(0xffF5F5F5),
-                                                      ),
-                                                      child: Center(
-                                                        child:Text('4. 6군', style: TextStyle(fontWeight: FontWeight.bold),),
-                                                      )
-                                                    )
-                                                  ],
-                                                ),
-                                                SizedBox(width:15.0),
-                                                Column( //보기2,보기5
-                                                  children: [
-                                                    Container(//보기2
-                                                      width: 140.0,
-                                                      height: 65.0,
-                                                      decoration: BoxDecoration(//모서리를 둥글게
-                                                        border: Border.all(color: Colors.black26, width: 3),
-                                                        color: Color(0xffF5F5F5),
-                                                      ),
-                                                      child: Center(
-                                                        child: Text('2. 4군', style: TextStyle(fontWeight: FontWeight.bold),),
-                                                      )
-                                                    ),
-                                                    SizedBox(height:12.0),
-                                                    Container(//보기5
-                                                      width: 140.0,
-                                                      height: 65.0,
-                                                      decoration: BoxDecoration(//모서리를 둥글게
-                                                        border: Border.all(color: Colors.black26, width: 3),
-                                                        color: Color(0xffF5F5F5),
-                                                      ),
-                                                      child: Center(
-                                                        child: Text('5. 7군', style: TextStyle(fontWeight: FontWeight.bold),),
-                                                      )
-                                                    ),
-                                                  ],
-                                                ),
-
-                                                SizedBox(width:15.0),
-
-                                                Column(
-                                                  children: [
                                                     Container(//보기3
                                                         width: 140.0,
                                                         height: 65.0,
@@ -186,7 +140,53 @@ class _mediumQuiz1 extends State<mediumQuiz1> {
                                                           color: Color(0xffF5F5F5),
                                                         ),
                                                         child: Center(
-                                                          child: Text('3. 5군', style: TextStyle(fontWeight: FontWeight.bold),),
+                                                          child:Text('3. 황무'),
+                                                        )
+                                                    )
+                                                  ],
+                                                ),
+                                                SizedBox(width:15.0),
+                                                Column( //보기2,보기4
+                                                  children: [
+                                                    Container(//보기2
+                                                        width: 140.0,
+                                                        height: 65.0,
+                                                        decoration: BoxDecoration(//모서리를 둥글게
+                                                          border: Border.all(color: Colors.black26, width: 3),
+                                                          color: Color(0xffF5F5F5),
+                                                        ),
+                                                        child: Center(
+                                                          child: Text('2.문충'),
+                                                        )
+                                                    ),
+                                                    SizedBox(height:12.0),
+                                                    Container(//보기4
+                                                        width: 140.0,
+                                                        height: 65.0,
+                                                        decoration: BoxDecoration(//모서리를 둥글게
+                                                          border: Border.all(color: Colors.black26, width: 3),
+                                                          color: Color(0xffF5F5F5),
+                                                        ),
+                                                        child: Center(
+                                                          child: Text('4.무열'),
+                                                        )
+                                                    ),
+                                                  ],
+                                                ),
+
+                                                SizedBox(width:15.0),
+
+                                                Column(
+                                                  children: [
+                                                    Container(//보기4
+                                                        width: 140.0,
+                                                        height: 65.0,
+                                                        decoration: BoxDecoration(//모서리를 둥글게
+                                                          border: Border.all(color: Colors.black26, width: 3),
+                                                          color: Color(0xffF5F5F5),
+                                                        ),
+                                                        child: Center(
+                                                          child: Text('5.충무'),
                                                         )
                                                     )
                                                   ],
@@ -214,7 +214,7 @@ class _mediumQuiz1 extends State<mediumQuiz1> {
                                 onPressed: () {
                                   print('next story');
                                   Navigator.of(context)
-                                      .push(MaterialPageRoute(builder: (context) => mediumQuiz2()));
+                                      .push(MaterialPageRoute(builder: (context) => hardQuiz3()));
                                 },
                               ),
 
