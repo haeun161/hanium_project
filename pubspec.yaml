@@ -32,10 +32,6 @@ dependencies:
   firebase_auth: ^3.0.2
   curved_animation_controller: ^1.1.0+1
 
-  flutter:
-    sdk: flutter
-
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -90,6 +86,18 @@ flutter:
     - assets/ranking/top3.png
     - assets/ranking/4th_bgr.png
     - assets/ranking/4th_.png
+    #story
+    - assets/story/character.png
+    - assets/story/character1.png
+    - assets/story/npc.png
+    - assets/story/npc1.png
+    - assets/story/soldiers1.png
+    - assets/story/soldiers2.png
+    - assets/story/main_soldier.png
+    - assets/story/war_background1.png
+    -
+    #story1
+    - assets/story/letter.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

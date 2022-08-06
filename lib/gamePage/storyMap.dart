@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:history_gamification/Intro/intro1.dart';
 import 'package:history_gamification/gamePage/storyMap2.dart';
 import 'package:history_gamification/mainPage.dart';
+import 'package:history_gamification/story1/story1.dart';
+import 'package:history_gamification/story1/typingText.dart';
 
 
 class storyMap extends StatefulWidget {
@@ -57,88 +60,118 @@ class _storyMap extends State<storyMap> {
                 Row(
                   children: <Widget>[
                     Container(
-                        height: 90,
-                        width: 100,
+                        width: 115,
+                        height: 100,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: AssetImage('assets/images1/star.png'),
                           ),
                         ),
-                        child: ListView(
-                            children: <Widget>[
-                              SizedBox( height:35.0),
-                              Text(
-                                '1',
+                        child: Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            splashColor: Colors.black26,
+                            onTap: () {
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (context) => intro1()));
+                            },
+                            child: Center(
+                              child: Text(
+                                '0',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(fontSize:20, color:Colors.purple, fontWeight: FontWeight.bold),
                               ),
-                            ]
+                            )
+                          ),
                         )
                     ),
-                    SizedBox( width:60.0),
+
+                    SizedBox( width:40.0),
                     Container(
-                        height: 90,
-                        width: 100,
+                        width: 115,
+                        height: 100,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: AssetImage('assets/images1/star.png'),
                           ),
                         ),
-                        child: ListView(
-                            children: <Widget>[
-                              SizedBox( height:35.0),
-                              Text(
-                                '2',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(fontSize:20, color:Colors.purple, fontWeight: FontWeight.bold),
-                              ),
-                            ]
+                        child: Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                              splashColor: Colors.black26,
+                              onTap: () {
+                                Navigator.of(context)
+                                    .push(MaterialPageRoute(builder: (context) => story1()));
+                              },
+                              child: Center(
+                                child: Text(
+                                  '1',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize:20, color:Colors.purple, fontWeight: FontWeight.bold),
+                                ),
+                              )
+                          ),
                         )
                     ),
-                    SizedBox( width:60.0),
+                    SizedBox( width:40.0),
                     Container(
-                        height: 90,
-                        width: 100,
+                        width: 115,
+                        height: 100,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: AssetImage('assets/images1/star.png'),
                           ),
                         ),
-                        child: ListView(
-                            children: <Widget>[
-                              SizedBox( height:35.0),
-                              Text(
-                                '3',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(fontSize:20, color:Colors.purple, fontWeight: FontWeight.bold),
-                              ),
-                            ]
+                        child: Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                              splashColor: Colors.black26,
+                              onTap: () {
+                                Navigator.of(context)
+                                    .push(MaterialPageRoute(builder: (context) => typingText()));
+                              },
+                              child: Center(
+                                child: Text(
+                                  '2',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize:20, color:Colors.purple, fontWeight: FontWeight.bold),
+                                ),
+                              )
+                          ),
                         )
                     ),
-                    SizedBox( width:60.0),
+                    SizedBox( width:40.0),
                     Container(
-                        height: 90,
-                        width: 100,
+                        width: 115,
+                        height: 100,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: AssetImage('assets/images1/star.png'),
                           ),
                         ),
-                        child: ListView(
-                            children: <Widget>[
-                              SizedBox( height:35.0),
-                              Text(
-                                '4',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(fontSize:20, color:Colors.purple, fontWeight: FontWeight.bold),
-                              ),
-                            ]
+                        child: Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                              splashColor: Colors.black26,
+                              onTap: () {
+                                Navigator.of(context)
+                                    .push(MaterialPageRoute(builder: (context) => intro1()));
+                              },
+                              child: Center(
+                                child: Text(
+                                  '3',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize:20, color:Colors.purple, fontWeight: FontWeight.bold),
+                                ),
+                              )
+                          ),
                         )
                     ),
+
                   ],
                 )
 
