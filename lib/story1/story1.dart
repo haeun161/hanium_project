@@ -9,7 +9,6 @@ class story1 extends StatefulWidget {
 
 class _story1 extends State<story1> {
   @override
-  bool _visible = true;
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,13 +113,18 @@ class _story1 extends State<story1> {
                                 speed: const Duration(milliseconds: 100),
                               ),
                               TypewriterAnimatedText(
-                                '한번 같이 이 현장으로 떠나볼까? \n 저기 바로 을지문덕이 보이네! 빨리 가보자',
+                                '한번 같이 이 현장으로 떠나볼까? \n 저기 바로 을지문덕이 보이네! 빨리 가보자 ',
                                 textStyle: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
                                 ),
                                 speed: const Duration(milliseconds: 100),
+                              ),
+                              TypewriterAnimatedText(
+                                '다음 페이지 게속..',
+                                textStyle: const TextStyle(color: Colors.white54, fontSize: 18.0, fontWeight: FontWeight.bold,),
+                                speed: const Duration(milliseconds: 10),
                               ),
                             ],
 
@@ -165,7 +169,6 @@ class story1_1 extends StatefulWidget {
 }
 
 class _story1_1 extends State<story1_1> {
-  bool _visible = true;
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -285,6 +288,11 @@ class _story1_1 extends State<story1_1> {
                                 ),
                                 speed: const Duration(milliseconds: 100),
                               ),
+                              TypewriterAnimatedText(
+                                '다음 페이지 게속..',
+                                textStyle: const TextStyle(color: Colors.white54, fontSize: 18.0, fontWeight: FontWeight.bold,),
+                                speed: const Duration(milliseconds: 10),
+                              ),
 
                             ],
 
@@ -365,29 +373,27 @@ class _story1_2 extends State<story1_2> {
 
                       Row(
                         children: [
-                          SizedBox(width: 50.0,),
+                          SizedBox(width: 100.0,),
                           Column(
                             children: [
-                              Container( //군사들
-                                width: 230,
-                                height: 180,
+                              Container( //군사
+                                width: 220,
+                                height: 260,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.cover,
-                                    image: AssetImage('assets/story/soldiers1.png'),
+                                    image: AssetImage('assets/story/soldier.png'),
                                   ),
                                 ),
                               ),
-                              Container(
-                                height: 50.0,
-                              ),
+
                             ],
                           ),
 
-                          SizedBox(width: 150.0,),
-                          Container( //을지문덕
+                          SizedBox(width: 100.0,),
+                          Container( //주인공
                             width: 220,
-                            height: 180,
+                            height: 220,
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.cover,
@@ -415,42 +421,45 @@ class _story1_2 extends State<story1_2> {
                         onPressed: () {
                           print('before story');
                           Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (context) => story1()));
+                              .push(MaterialPageRoute(builder: (context) => story1_1()));
                         },
                       ),
 
-                      Container(
-                          width: 110,
-                          height: 105,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage('assets/story/character1.png'),
-                            ),
-                          ),
-                          child: Container(
-                            alignment: const Alignment(0.8,0.5),
-                            child: Text('나', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-                          )
-                      ),
-                      SizedBox(width: 10.0,),
+
+                      SizedBox(width: 90.0,),
                       Center(
                         child: Container(
                           width: 500,
                           child:AnimatedTextKit(
                           animatedTexts: [
                           TypewriterAnimatedText(
-                          '무슨일이에요?',
+                          '나: 무슨일이에요?',
                             textStyle: const TextStyle(color: Colors.white, fontSize: 18.0,  fontWeight: FontWeight.bold,),
                             speed: const Duration(milliseconds: 100),
                           ),
 
                           TypewriterAnimatedText(
-                            '우리 을지문덕 장군의 활약으로 요동성에서 더 이상 진군하기가 어려워진 수나라가 우문술/우중문 장군에게 무려 30만명의 별동대를 주고 평양성을 치라고 명했다는 소문이 파다해!',
-                            textStyle: const TextStyle(color: Colors.white, fontSize: 18.0,  fontWeight: FontWeight.bold,),
+                            '병사: 우리 을지문덕 장군의 활약으로 요동성에서 더 이상 진군하기 어려워진 수나라가 우중문 장군에게 무려 30만명의 별동대를 주고 평양성을 치라고 명했다는 소문이 파다해!',
+                            textStyle: const TextStyle(color: Colors.white54, fontSize: 18.0,  fontWeight: FontWeight.bold,),
                             speed: const Duration(milliseconds: 100),
                           ),
 
+                            TypewriterAnimatedText(
+                              '나: 헉 30만명이나요?',
+                              textStyle: const TextStyle(color: Colors.white, fontSize: 18.0,  fontWeight: FontWeight.bold,),
+                              speed: const Duration(milliseconds: 100),
+                            ),
+
+                            TypewriterAnimatedText(
+                              '병사: 걱정마. 이번에도 을지문덕 장군님이 멋지게 물리쳐주실거야!',
+                              textStyle: const TextStyle(color: Colors.white54, fontSize: 18.0,  fontWeight: FontWeight.bold,),
+                              speed: const Duration(milliseconds: 100),
+                            ),
+                            TypewriterAnimatedText(
+                              '다음 페이지 게속..',
+                              textStyle: const TextStyle(color: Colors.white54, fontSize: 18.0, fontWeight: FontWeight.bold,),
+                              speed: const Duration(milliseconds: 10),
+                            ),
 
                           ],
 
@@ -463,6 +472,7 @@ class _story1_2 extends State<story1_2> {
 
 
                       ),
+                      SizedBox(width: 20.0,),
                       IconButton(
                         icon: Icon(
                           Icons.navigate_next,
@@ -472,7 +482,365 @@ class _story1_2 extends State<story1_2> {
                         onPressed: () {
                           print('next story');
                           Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (context) => story1()));
+                              .push(MaterialPageRoute(builder: (context) => story1_3()));
+                        },
+                      ),
+                    ],
+                  ),
+
+                )
+
+              ],
+            )
+
+        ),
+      ),
+
+    );
+  }
+}
+
+class story1_3 extends StatefulWidget {
+  @override
+  _story1_3 createState() => _story1_3();
+}
+
+class _story1_3 extends State<story1_3> {
+
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: AssetImage('assets/story/war_background1.png'), // 배경 이미지
+          ),
+        ),
+        child: SafeArea(
+            child:ListView(
+              children: <Widget>[
+                Container(
+                  height: 230.0,
+                  child: ListView(
+                    children: [
+                      SizedBox( height:10.0),
+                      Container(
+                          height: 35.0,
+                          alignment: const Alignment(-0.9,0),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(primary: Color(0xff9999FF),),
+                            child: const Text('Map'),
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (context) => storyMap()));
+                            },
+                          )
+                      ),
+
+                      Row(
+                        children: [
+                          SizedBox(width: 30.0,),
+                          Column(
+                            children: [
+                              Container( //군사
+                                width: 230,
+                                height: 260,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage('assets/story/soldier.png'),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+
+                          Column(
+                            children: [
+                              Container( //군사
+                                width: 120,
+                                height: 120,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage('assets/story/soldiers1.png'),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                height: 80,
+                              )
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Container( //군사
+                                width: 120,
+                                height: 120,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage('assets/story/soldiers1.png'),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                height: 80,
+                              )
+                            ],
+                          ),
+                          Container( //을지문덕
+                            width: 220,
+                            height: 260,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage('assets/story/main_soldier.png'),
+                              ),
+                            )
+
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+
+                Container( //textbox
+                  height: 120,
+                  color: Colors.black54,
+                  child: Row(
+                    children: [
+                      IconButton(
+                        icon: Icon(
+                          Icons.navigate_before,
+                          color: Colors.white,
+                          size: 50.0,
+                        ),
+                        onPressed: () {
+                          print('before story');
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) => story1_2()));
+                        },
+                      ),
+
+
+                      SizedBox(width: 120.0,),
+
+                      Center(
+                          child: Container(
+                            width: 500,
+                            child: AnimatedTextKit(
+                              animatedTexts: [
+                                TypewriterAnimatedText(
+                                  '을지문덕: 수나라의 움직임은 어떠한가?',
+                                  textStyle: const TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold,),
+                                  speed: const Duration(milliseconds: 100),
+                                ),
+                                TypewriterAnimatedText(
+                                  '군사1: 예 장군님!장군님의 예상대로 수나라의 군대는 이미 많이 지치고 식량이 거의 떨어진 상태입니다. ',
+                                  textStyle: const TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold,),
+                                  speed: const Duration(milliseconds: 100),
+                                ),
+                                TypewriterAnimatedText(
+                                  '을지문덕: 좋아. 우리는 계속 지는 흉내를 내면서 수나라 군대를 평양성 근처까지 끌어들이는 것이 우리의 작전이다! 알겠나? ',
+                                  textStyle: const TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold,),
+                                  speed: const Duration(milliseconds: 100),
+                                ),
+                                TypewriterAnimatedText(
+                                  '군사들: 군사들: 예! 따르겠습니다',
+                                  textStyle: const TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold,),
+                                  speed: const Duration(milliseconds: 100),
+                                ),
+                                TypewriterAnimatedText(
+                                  '다음 페이지 게속..',
+                                  textStyle: const TextStyle(color: Colors.white54, fontSize: 18.0, fontWeight: FontWeight.bold,),
+                                  speed: const Duration(milliseconds: 10),
+                                ),
+
+                              ],
+
+                              totalRepeatCount: 1,
+                              pause: const Duration(milliseconds: 1000),
+                              displayFullTextOnTap: true,
+                              stopPauseOnTap: true,
+                            ),
+                          )
+
+                      ),
+                      SizedBox(width: 20.0,),
+                      IconButton(
+                        icon: Icon(
+                          Icons.navigate_next,
+                          color: Colors.white,
+                          size: 50.0,
+                        ),
+                        onPressed: () {
+                          print('next story');
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) => story1_4()));
+                        },
+                      ),
+                    ],
+                  ),
+
+                )
+
+              ],
+            )
+
+        ),
+      ),
+
+    );
+  }
+}
+
+class story1_4 extends StatefulWidget {
+  @override
+  _story1_4 createState() => _story1_4();
+}
+
+class _story1_4 extends State<story1_4> {
+
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: AssetImage('assets/story/war_background1.png'), // 배경 이미지
+          ),
+        ),
+        child: SafeArea(
+            child:ListView(
+              children: <Widget>[
+                Container(
+                  height: 230.0,
+                  child: ListView(
+                    children: [
+                      SizedBox( height:10.0),
+                      Container(
+                          height: 35.0,
+                          alignment: const Alignment(-0.9,0),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(primary: Color(0xff9999FF),),
+                            child: const Text('Map'),
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (context) => storyMap()));
+                            },
+                          )
+                      ),
+
+                      Row(
+                        children: [
+                          SizedBox(width: 150.0,),
+
+                          Column(
+                            children: [
+                              Container( //군사들
+                                width: 170,
+                                height: 160,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage('assets/story/soldiers2.png'),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                height: 80,
+                              )
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Container( //군사들
+                                width: 170,
+                                height: 160,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage('assets/story/soldiers2.png'),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                height: 100,
+                              )
+                            ],
+                          ),
+
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+
+                Container( //textbox
+                  height: 120,
+                  color: Colors.black54,
+                  child: Row(
+                    children: [
+                      IconButton(
+                        icon: Icon(
+                          Icons.navigate_before,
+                          color: Colors.white,
+                          size: 50.0,
+                        ),
+                        onPressed: () {
+                          print('before story');
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) => story1_3()));
+                        },
+                      ),
+
+
+                      SizedBox(width: 120.0,),
+
+                      Center(
+                          child: Container(
+                            width: 500,
+                            child: AnimatedTextKit(
+                              animatedTexts: [
+                                TypewriterAnimatedText(
+                                  '수나라 군: 평양성까지 이리 쉽게 도착하다니! \n      조금 지치긴 했지만, 이번에야말로 우리가 승리하겠구만!',
+                                  textStyle: const TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold,),
+                                  speed: const Duration(milliseconds: 100),
+                                ),
+
+                                TypewriterAnimatedText(
+                                  '다음 페이지 게속..',
+                                  textStyle: const TextStyle(color: Colors.white54, fontSize: 18.0, fontWeight: FontWeight.bold,),
+                                  speed: const Duration(milliseconds: 10),
+                                ),
+
+                              ],
+
+                              totalRepeatCount: 1,
+                              pause: const Duration(milliseconds: 1000),
+                              displayFullTextOnTap: true,
+                              stopPauseOnTap: true,
+                            ),
+                          )
+
+                      ),
+                      SizedBox(width: 20.0,),
+                      IconButton(
+                        icon: Icon(
+                          Icons.navigate_next,
+                          color: Colors.white,
+                          size: 50.0,
+                        ),
+                        onPressed: () {
+                          print('next story');
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) => story1_4()));
                         },
                       ),
                     ],

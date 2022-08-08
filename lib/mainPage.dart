@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:history_gamification/Intro/intro1.dart';
-import 'package:history_gamification/main.dart';
 import 'package:history_gamification/LoginPage.dart';
 import 'package:history_gamification/gamePage/storyMap.dart';
 import 'package:history_gamification/quizPage.dart';
