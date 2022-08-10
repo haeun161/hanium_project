@@ -1014,8 +1014,8 @@ class _story1_6 extends State<story1_6> with SingleTickerProviderStateMixin{
   Widget build(BuildContext context) {
     // tween begin부터 end까지
     // animate 동안
-    Animation<double> _animation =
-    Tween(begin: 1.0, end: 0.4).animate(_animationController);
+    Animation<double> _animation = Tween(begin: 1.0, end: 0.4).animate(_animationController);
+    Animation<double> _animation1 = Tween(begin: 0.0, end: 1.0).animate(_animationController);
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -1050,7 +1050,26 @@ class _story1_6 extends State<story1_6> with SingleTickerProviderStateMixin{
 
                       Row(
                         children: [
-                          SizedBox(width: 100.0,),
+                          Column(
+                            children: [
+
+                              ScaleTransition(
+                                // animation 구현할땐 Animation 객체가 필요
+                                scale: _animation1,
+                                child: Container( //군사들
+                                  width: 170,
+                                  height: 160,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage(
+                                          'assets/story/soldiers1.png'),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
 
                           Column(
                             children: [
@@ -1227,8 +1246,8 @@ class _story1_7 extends State<story1_7> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     // tween begin부터 end까지
     // animate 동안
-    Animation<double> _animation =
-    Tween(begin: 1.0, end: 0.4).animate(_animationController);
+    Animation<double> _animation = Tween(begin: 1.0, end: 0.4).animate(_animationController);
+    Animation<double> _animation1 = Tween(begin: 0.4, end: 1.0).animate(_animationController);
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -1237,7 +1256,7 @@ class _story1_7 extends State<story1_7> with SingleTickerProviderStateMixin {
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage('assets/story/war_background1.png'), // 배경 이미지
+            image: AssetImage('assets/story/river1.png'), // 배경 이미지
           ),
         ),
         child: SafeArea(
@@ -1265,14 +1284,54 @@ class _story1_7 extends State<story1_7> with SingleTickerProviderStateMixin {
 
                       Row(
                         children: [
-                          SizedBox(width: 100.0,),
+
+                          Column(
+                            children: [
+
+                              ScaleTransition(
+                                // animation 구현할땐 Animation 객체가 필요
+                                scale: _animation1,
+                                child: Container( //군사들
+                                  width: 160,
+                                  height: 160,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage(
+                                          'assets/story/soldiers1.png'),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: [
+
+                              ScaleTransition(
+                                // animation 구현할땐 Animation 객체가 필요
+                                scale: _animation1,
+                                child: Container( //군사들
+                                  width: 150,
+                                  height: 200,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage(
+                                          'assets/story/soldier.png'),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
 
                           Column(
                             children: [
                               ScaleTransition(
                                 // animation 구현할땐 Animation 객체가 필요
                                 scale: _animation,
-                                child: Container( //군사들
+                                child: Container( //수나라 군사들
                                   width: 170,
                                   height: 160,
                                   decoration: BoxDecoration(
@@ -1292,11 +1351,10 @@ class _story1_7 extends State<story1_7> with SingleTickerProviderStateMixin {
                           ),
                           Column(
                             children: [
-
                               ScaleTransition(
                                 // animation 구현할땐 Animation 객체가 필요
                                 scale: _animation,
-                                child: Container( //군사들
+                                child: Container( //수나라 군사들
                                   width: 170,
                                   height: 160,
                                   decoration: BoxDecoration(
@@ -1308,28 +1366,15 @@ class _story1_7 extends State<story1_7> with SingleTickerProviderStateMixin {
                                   ),
                                 ),
                               ),
+
                               Container(
                                 height: 100,
                               )
                             ],
                           ),
-                          Container(
-                            child: ScaleTransition(
-                              // animation 구현할땐 Animation 객체가 필요
-                              scale: _animation,
-                              child: Container( //군사들
-                                width: 170,
-                                height: 200,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                        'assets/story/soldier1.png'),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          )
+
+
+
 
                         ],
                       )
@@ -1356,24 +1401,8 @@ class _story1_7 extends State<story1_7> with SingleTickerProviderStateMixin {
                         },
                       ),
 
-                      Container( //군사들
-                          width: 110,
-                          height: 125,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage('assets/story/soldier.png'),
-                            ),
-                          ),
-                          child: Container(
-                            alignment: Alignment(1.5, 1.0),
-                            child: Text('을지문덕', style: TextStyle(
-                                color: Colors.white),),
-                          )
-                      ),
 
-
-                      SizedBox(width: 70.0,),
+                      SizedBox(width: 120.0,),
 
                       Center(
                           child: Container(
@@ -1382,7 +1411,23 @@ class _story1_7 extends State<story1_7> with SingleTickerProviderStateMixin {
                               animatedTexts: [
                                 TypewriterAnimatedText(
                                   '을지문덕: 앞에는 평양성, 뒤로는 살수(청천강)에 갇힌 수나라군은 이미 독 안에 든 쥐다. '
-                                      '\n 퇴각하는 수나라군을 놓치지 말고 돌격하라',
+                                      '\n 퇴각하는 수나라군을 놓치지 말고 돌격하라!',
+                                  textStyle: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 19.0,
+                                    fontWeight: FontWeight.bold,),
+                                  speed: const Duration(milliseconds: 100),
+                                ),
+                                TypewriterAnimatedText(
+                                  '....',
+                                  textStyle: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 19.0,
+                                    fontWeight: FontWeight.bold,),
+                                  speed: const Duration(milliseconds: 100),
+                                ),
+                                TypewriterAnimatedText(
+                                  '수나라 군사: 우중문 장군님, 저희 너무 깊이 들어온 거 아닌가요??',
                                   textStyle: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 19.0,
@@ -1409,7 +1454,7 @@ class _story1_7 extends State<story1_7> with SingleTickerProviderStateMixin {
                           )
 
                       ),
-                      SizedBox(width: 10.0,),
+                      SizedBox(width: 60.0,),
                       IconButton(
                         icon: Icon(
                           Icons.navigate_next,
@@ -1419,7 +1464,196 @@ class _story1_7 extends State<story1_7> with SingleTickerProviderStateMixin {
                         onPressed: () {
                           print('next story');
                           Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) => story1_end()));
+                        },
+                      ),
+                    ],
+                  ),
+
+                )
+
+              ],
+            )
+
+        ),
+      ),
+
+    );
+  }
+}
+
+
+//마지막 스토리
+class story1_end extends StatefulWidget {
+  @override
+  _story1_end createState() => _story1_end();
+}
+
+class _story1_end extends State<story1_end> {
+
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: AssetImage('assets/story/war_background1.png'), // 배경 이미지
+          ),
+        ),
+        child: SafeArea(
+            child:ListView(
+              children: <Widget>[
+                Container(
+                  height: 230.0,
+                  child: ListView(
+                    children: [
+                      SizedBox( height:10.0),
+                      Container(
+                          height: 35.0,
+                          alignment: const Alignment(-0.9,0),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(primary: Color(0xff9999FF),),
+                            child: const Text('Map'),
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (context) => storyMap()));
+                            },
+                          )
+                      ),
+
+                      Row(
+                        children: [
+                          SizedBox(width: 50.0,),
+                          Container( //NPC
+                            width: 230,
+                            height: 150,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage('assets/story/npc.png')
+                                )
+                            ),
+                          ),
+
+                          SizedBox(width: 20.0),
+                          Container( //NPC
+                            width: 170,
+                            height: 150,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage('assets/story/piece1.png')
+                                )
+                            ),
+                          ),
+                          SizedBox(width: 20.0),
+                          Container( //주인공
+                            width: 220,
+                            height: 180,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage('assets/story/character.png'),
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+
+                Container( //textbox
+                  height: 120,
+                  color: Colors.black54,
+                  child: Row(
+                    children: [
+                      IconButton(
+                        icon: Icon(
+                          Icons.navigate_before,
+                          color: Colors.white,
+                          size: 50.0,
+                        ),
+                        onPressed: () {
+                          print('before story');
+                          Navigator.of(context)
                               .push(MaterialPageRoute(builder: (context) => story1_7()));
+                        },
+                      ),
+
+                      SizedBox(width: 10.0),
+                      Container(
+                          width: 110,
+                          height: 105,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage('assets/story/npc1.png'),
+                            ),
+                          ),
+
+                      ),
+                      SizedBox(width: 60.0,),
+
+                      Center(
+                          child: Container(
+                            width: 400,
+                            child: AnimatedTextKit(
+                              animatedTexts: [
+                                TypewriterAnimatedText(
+                                  '이것이 바로 그 유명한 살수 대첩이야!\n 이때 수나라 군대 30만 명 중에 살아 돌아간 사람이 겨우 2700명이었어.',
+                                  textStyle: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  speed: const Duration(milliseconds: 100),
+                                ),
+                                TypewriterAnimatedText(
+                                  '정말 크게 이긴 전쟁이었지. 이렇게 크게 이긴 전쟁 전투를 대첩이라고 해. \n 그래서 이 전투를 살수 대첩이라고 불러!',
+                                  textStyle: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  speed: const Duration(milliseconds: 100),
+                                ),
+                                TypewriterAnimatedText(
+                                  '수고했어! 약속대로 백자 한 조각을 줄게',
+                                  textStyle: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  speed: const Duration(milliseconds: 100),
+                                ),
+                                TypewriterAnimatedText(
+                                  '다음 페이지 게속..',
+                                  textStyle: const TextStyle(color: Colors.white54, fontSize: 18.0, fontWeight: FontWeight.bold,),
+                                  speed: const Duration(milliseconds: 10),
+                                ),
+
+                              ],
+
+                              totalRepeatCount: 1,
+                              pause: const Duration(milliseconds: 1000),
+                              displayFullTextOnTap: true,
+                              stopPauseOnTap: true,
+                            ),
+                          )
+
+                      ),
+                      SizedBox(width: 40.0,),
+                      IconButton(
+                        icon: Icon(
+                          Icons.navigate_next,
+                          color: Colors.white,
+                          size: 50.0,
+                        ),
+                        onPressed: () {
+                          print('next story');
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) => story1_2()));
                         },
                       ),
                     ],

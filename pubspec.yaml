@@ -101,6 +101,8 @@ flutter:
     -
     #story1
     - assets/story/letter.png
+    - assets/story/river1.png
+    - assets/story/piece1.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
