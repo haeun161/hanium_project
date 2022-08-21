@@ -65,13 +65,13 @@ class _mainPage extends State<mainPage> {
                                         radius: 40,
                                       ),
 
-                                      SizedBox( height: 10),
-                                      Text(
-                                        auth.currentUser!.email.toString()
-                                        ,
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(fontSize:15, color:Colors.white, fontWeight: FontWeight.bold),
-                                      ),
+                                      // SizedBox( height: 10),
+                                      // Text(
+                                      //   auth.currentUser!.email.toString()
+                                      //   ,
+                                      //   textAlign: TextAlign.center,
+                                      //   style: TextStyle(fontSize:15, color:Colors.white, fontWeight: FontWeight.bold),
+                                      // ),
 
 
 

@@ -87,6 +87,16 @@ flutter:
     - assets/ranking/top3.png
     - assets/ranking/4th_bgr.png
     - assets/ranking/4th_.png
+    #intro
+    - assets/intro/blurryMuseum.png
+    - assets/intro/Museum.png
+    - assets/intro/soldiers.png
+    - assets/intro/character.png
+    - assets/intro/ceramic.png
+    - assets/intro/hero.png
+    - assets/intro/brokenCeramic.png
+    - assets/intro/npcLeft.png
+    - assets/intro/holymoly.png
     #story
     - assets/story/character.png
     - assets/story/character1.png
