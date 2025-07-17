@@ -91,7 +91,6 @@ AWS 기반 3계층(클라이언트, 애플리케이션, 데이터) 아키텍처�
 ## ⚙️ 기능 설계
 
 ### 🔄 기능 흐름도
-퀴즈 출제 → 정답 분석 → 난이도 조정 → 피드백 제공 과정을 시각화했습니다.  
 <img width="821" alt="기능 흐름도" src="https://github.com/user-attachments/assets/52099964-aa55-42e3-9c2e-4fff4ffebc42" />
 
 ---
